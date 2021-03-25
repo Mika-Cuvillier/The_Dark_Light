@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeplacementPersonnage : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject camera3emePersonne;
     public GameObject personnage;
     public GameObject pivotRotation;
+    public Image barreVie;
     float vitesseDeplacement;
     public float hauteurSaut;
     public float ajoutGravite;
@@ -71,6 +73,16 @@ public class DeplacementPersonnage : MonoBehaviour
             {
                 GetComponent<Animator>().SetBool("épée", true);
                 Invoke("EnleverAnimationEpee", 0.2f);
+            }
+
+            ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
+
+
+            barreVie.fillAmount += 0.0001f;
+            if (Input.GetKeyDown("b"))
+            {
+
+                barreVie.fillAmount -= 0.1f;
             }
         }
 
