@@ -9,6 +9,8 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject camera3emePersonne;
     public GameObject personnage;
     public GameObject pivotRotation;
+    public GameObject leCube; // objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
+    public GameObject imageCube;
     public Image barreVie;
     float vitesseDeplacement;
     public float hauteurSaut;
@@ -87,7 +89,21 @@ public class DeplacementPersonnage : MonoBehaviour
         }
 
     }
-    
+
+    //******************************************************** DÉTECTTION COLLISION **************************************//
+    void OnCollisionEnter(Collision infosCollission)
+    {
+        if (infosCollission.gameObject.tag == "cube")
+        {
+           
+                imageCube.SetActive(true);
+                leCube.SetActive(false);
+            
+   
+            
+        }
+    }
+
     void FixedUpdate(){
         if(auSol) {
             GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
