@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-4200757095836226793
+--- !u!1102 &-8729514186998149505
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime_die
+  m_Name: rabbit_die
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,56 +20,51 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400006, guid: e607f74860c67814e93c914b710142d5, type: 3}
+  m_Motion: {fileID: 7400008, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1107 &-1259923114255602139
-AnimatorStateMachine:
+--- !u!1102 &-8069218573618255903
+AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Base Layer
-  m_ChildStates:
-  - serializedVersion: 1
-    m_State: {fileID: 6225909271055891319}
-    m_Position: {x: 354, y: 129, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -4200757095836226793}
-    m_Position: {x: 605, y: -85, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 5844380092801842258}
-    m_Position: {x: 692, y: -139, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6400219656031296630}
-    m_Position: {x: 465, y: -130, z: 0}
-  m_ChildStateMachines: []
-  m_AnyStateTransitions: []
-  m_EntryTransitions: []
-  m_StateMachineTransitions: {}
+  m_Name: rabbit_idle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 6225909271055891319}
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ControleSlime
+  m_Name: ConroleLapin
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-    m_StateMachine: {fileID: -1259923114255602139}
+    m_StateMachine: {fileID: 9100040586043800186}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -79,14 +74,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &5844380092801842258
+--- !u!1102 &944705382930739505
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime_idle
+  m_Name: rabbit_move
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -99,20 +94,20 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e607f74860c67814e93c914b710142d5, type: 3}
+  m_Motion: {fileID: 7400002, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &6225909271055891319
+--- !u!1102 &7902639749178970371
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime_move
+  m_Name: rabbit_attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -125,35 +120,40 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400002, guid: e607f74860c67814e93c914b710142d5, type: 3}
+  m_Motion: {fileID: 7400004, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &6400219656031296630
-AnimatorState:
+--- !u!1107 &9100040586043800186
+AnimatorStateMachine:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: slime_attack
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 944705382930739505}
+    m_Position: {x: 318, y: 132, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7902639749178970371}
+    m_Position: {x: 576, y: -81, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8729514186998149505}
+    m_Position: {x: 668, y: -129, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8069218573618255903}
+    m_Position: {x: 432, y: -106, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400004, guid: e607f74860c67814e93c914b710142d5, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 944705382930739505}
