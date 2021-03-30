@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GestionCheckpoints : MonoBehaviour
 {
+    public Image barreVie;
     void Update()
-    {/*
-        if(vie==0){
+    {
+        if(barreVie.fillAmount <= 0){
             if(SceneManager.GetActiveScene().name == "Le_Naufrage")
             {
                 SceneManager.LoadScene("Le_Naufrage");
@@ -23,7 +25,7 @@ public class GestionCheckpoints : MonoBehaviour
             else if(SceneManager.GetActiveScene().name = "")
             {
                 SceneManager.LoadScene("");
-            }
-        }*/
+            }*/
+        }
     }
 }
