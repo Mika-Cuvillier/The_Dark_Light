@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class BouleDeFeu : MonoBehaviour
 {
-
-    private void OnCollisionEnter(Collision infoCollisions){
+    private void OnCollisionEnter(Collision infoCollisions)
+    {
+        if(infoCollisions.gameObject.tag == "Ennemi"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
+            print(infoCollisions.gameObject.name);
+        }
         Destroy(gameObject);
     }
 }

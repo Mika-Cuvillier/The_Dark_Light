@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Ennemis : MonoBehaviour
 {
+    public float vie;
     public GameObject positionPerso;
 
     // Start is called before the first frame update
@@ -16,6 +17,19 @@ public class Ennemis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<NavMeshAgent>().SetDestination(positionPerso.transform.position);
+        if(GetComponent<NavMeshAgent>().enabled == true){ 
+            GetComponent<NavMeshAgent>().SetDestination(positionPerso.transform.position);
+        }
+    }
+
+    public void ToucheBouleDeFeu(){
+        vie = vie -50;
+        if(vie <= 0){
+            GetComponent<Animator>().SetBool("mort", true);
+            GetComponent<NavMeshAgent>().enabled = false; 
+            gameObject.tag = "Untagged"; 
+            GetComponent<Collider>().enabled = false; 
+            Destroy(gameObject, 2f); 
+        }
     }
 }

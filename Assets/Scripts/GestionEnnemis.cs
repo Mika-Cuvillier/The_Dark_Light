@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GestionEnnemis : MonoBehaviour
 {
@@ -9,19 +10,21 @@ public class GestionEnnemis : MonoBehaviour
     public GameObject Fantome;
     public GameObject Lapin;
     public GameObject Slime;
+
+    public float vie;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("CreationChauveSouris", 2f, 5f);
-        InvokeRepeating("CreationFantomes", 2f, 3f);
-        InvokeRepeating("CreationLapins", 2f, 5f);
-        InvokeRepeating("CreationSlimes", 2f, 8f);
+        InvokeRepeating("CreationChauveSouris", 2f, 15f);
+        InvokeRepeating("CreationFantomes", 2f, 9f);
+        InvokeRepeating("CreationLapins", 2f, 15f);
+        InvokeRepeating("CreationSlimes", 2f, 20f);
     }
 
     // Update is called once per frame
-    void Update()
+    public void Uhpdate()
     {
-        
+        print("okay");
     }
 
     void CreationChauveSouris(){
@@ -40,4 +43,5 @@ public class GestionEnnemis : MonoBehaviour
         GameObject nouveauSlime= Instantiate(Slime);
         nouveauSlime.SetActive(true);
     }
+
 }
