@@ -22,9 +22,8 @@ public class GestionEnnemis : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Uhpdate()
+    public void Update()
     {
-        print("okay");
     }
 
     void CreationChauveSouris(){

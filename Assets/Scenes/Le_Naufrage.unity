@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.73930115, g: 0.77579194, b: 0.8506618, a: 1}
+  m_IndirectSpecularColor: {r: 0.7394546, g: 0.7759581, b: 0.85084194, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -667,6 +667,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fd4b310424927a840906404a14eeb5e4, type: 3}
+      propertyPath: m_TagString
+      value: Ennemi
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fd4b310424927a840906404a14eeb5e4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1147,6 +1151,7 @@ MonoBehaviour:
   Fantome: {fileID: 960484879}
   Lapin: {fileID: 2141478663}
   Slime: {fileID: 966229819}
+  vie: 0
 --- !u!4 &227289931
 Transform:
   m_ObjectHideFlags: 0
@@ -3779,6 +3784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c88e3a644467f42adef8be3b405d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vie: 25
   positionPerso: {fileID: 268024113}
 --- !u!195 &834274578
 NavMeshAgent:
@@ -4120,6 +4126,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
+      propertyPath: m_TagString
+      value: Ennemi
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4188,6 +4198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c88e3a644467f42adef8be3b405d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vie: 100
   positionPerso: {fileID: 268024113}
 --- !u!195 &960484881
 NavMeshAgent:
@@ -4243,6 +4254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c88e3a644467f42adef8be3b405d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vie: 150
   positionPerso: {fileID: 268024113}
 --- !u!195 &966229821
 NavMeshAgent:
@@ -6612,6 +6624,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: e607f74860c67814e93c914b710142d5, type: 3}
+      propertyPath: m_TagString
+      value: Ennemi
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: e607f74860c67814e93c914b710142d5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7068,6 +7084,10 @@ PrefabInstance:
     - target: {fileID: 100024, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
+      propertyPath: m_TagString
+      value: Ennemi
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
       propertyPath: m_RootOrder
@@ -8085,6 +8105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c88e3a644467f42adef8be3b405d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vie: 25
   positionPerso: {fileID: 268024113}
 --- !u!136 &2141478665
 CapsuleCollider:

@@ -8,7 +8,6 @@ public class BouleDeFeu : MonoBehaviour
     {
         if(infoCollisions.gameObject.tag == "Ennemi"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
-            print(infoCollisions.gameObject.name);
         }
         Destroy(gameObject);
     }
