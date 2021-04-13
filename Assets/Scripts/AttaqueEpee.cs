@@ -6,15 +6,10 @@ public class AttaqueEpee : MonoBehaviour
 {
 
 
-    // Start is called before the first frame update
-    void Start()
+  private void OnCollisionEnter(Collision infoCollisions)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(infoCollisions.gameObject.tag == "Ennemi"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee(); 
+        }
     }
 }
