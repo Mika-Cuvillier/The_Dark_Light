@@ -7,14 +7,15 @@ public class JourNuitCycle : MonoBehaviour
     /// ************************
     /// PAR TAMYLA AIT-CHELLOUCHE
     /// *************************
-    /// 
-    /// IL FAUT MODIFIER LE INVOKE POUR LES MOMENTS DE QUETE OU LE CYCLE CHANGE
+    /// Il va falloir modifier les invoke lors que les checkpoints seront programmés
     ///
 
+    // SKYBOX
     public Material CielJour;
     public Material CielNuit;
     public Material CielDemiJour;
 
+    // LUMIÈRES
     public GameObject LumierePointJour;
     public GameObject LumierePointNuit;
     public GameObject LumierePointTwilight;
@@ -22,94 +23,67 @@ public class JourNuitCycle : MonoBehaviour
     public GameObject LumiereDirectionalNuit;
     public GameObject LumiereDirectionalTwilight;
 
+    // Object contenant la musique de fond
+    public GameObject MusiqueOn;
+
+    public AudioClip jourMusique;
+    public AudioClip nuitMusique;
+
     void Start()
     {
-
         Invoke("LumiereJour", 1f);
-        
-
     }
 
     void LumiereJour ()
     {
+        // On active les différentes lumières relié aux jour et on change le skybox du jeu
         RenderSettings.skybox = CielJour;
         LumiereDirectionalJour.SetActive(true);
         LumierePointJour.SetActive(true);
 
-        Invoke("LumiereTwilight", 10f);
+        //On désactive les lumières de nuits
+        LumiereDirectionalNuit.SetActive(false);
+        LumierePointNuit.SetActive(false);
+
+        MusiqueOn.GetComponent<AudioSource>().clip = jourMusique;
+        MusiqueOn.GetComponent<AudioSource>().Play();
+
+        // Appel de la fonction pour activer le cycle du crépuscule
+        Invoke("LumiereTwilight", 30f);
     }
 
-    // Update is called once per frame
+    // 
     void LumiereTwilight()
     {
+        // On active les différentes lumières du crépuscule et on change le skybox du jeu
         RenderSettings.skybox = CielDemiJour;
         LumiereDirectionalTwilight.SetActive(true);
         LumierePointTwilight.SetActive(true);
 
+        // On désactive les lumières de jours
         LumiereDirectionalJour.SetActive(false);
         LumierePointJour.SetActive(false);
 
-        LumiereDirectionalNuit.SetActive(false);
-        LumierePointNuit.SetActive(false);
-
-        Invoke("LumiereNuit", 10f);
+        // Appel de la fonction pour activer le cycle de la nuit
+        Invoke("LumiereNuit", 20f);
     }
 
     void LumiereNuit ()
     {
+        // On active les différentes lumières de nuit et on change le skybox du jeu
         RenderSettings.skybox = CielNuit;
         LumiereDirectionalNuit.SetActive(true);
         LumierePointNuit.SetActive(true);
 
-        LumiereDirectionalJour.SetActive(false);
-        LumierePointJour.SetActive(false);
-
+        // On désactive les lumières du crépuscule
         LumiereDirectionalTwilight.SetActive(false);
         LumierePointTwilight.SetActive(false);
 
-        Invoke("LumiereJour", 10f);
+        MusiqueOn.GetComponent<AudioSource>().clip = nuitMusique;
+        MusiqueOn.GetComponent<AudioSource>().Play();
+
+        // Appel de la fonction pour activer le cycle du jour
+        Invoke("LumiereJour", 50f);
     }
 
-   /* void Test()
-    {
-        // TEST AVEC LES KEYCODE SI LE CHANGEMENT DE LUMINOSITÉ FONCTIONNE + SKYBOX
-        /* if (Input.GetKeyDown(KeyCode.I))
-           {
-               RenderSettings.skybox = CielNuit;
-               LumiereDirectionalNuit.SetActive(true);
-               LumierePointNuit.SetActive(true);
-
-               LumiereDirectionalJour.SetActive(false);
-               LumierePointJour.SetActive(false);
-
-               LumiereDirectionalTwilight.SetActive(false);
-               LumierePointTwilight.SetActive(false);
-           }
-
-           if (Input.GetKeyDown(KeyCode.U))
-           {
-               RenderSettings.skybox = CielDemiJour;
-               LumiereDirectionalTwilight.SetActive(true);
-               LumierePointTwilight.SetActive(true);
-
-               LumiereDirectionalJour.SetActive(false);
-               LumierePointJour.SetActive(false);
-
-               LumiereDirectionalNuit.SetActive(false);
-               LumierePointNuit.SetActive(false);
-           }
-
-           if (Input.GetKeyDown(KeyCode.P))
-           {
-               RenderSettings.skybox = CielJour;
-               LumiereDirectionalJour.SetActive(true);
-               LumierePointJour.SetActive(true);
-
-               LumiereDirectionalNuit.SetActive(false);
-               LumierePointNuit.SetActive(false);
-
-               LumiereDirectionalTwilight.SetActive(false);
-               LumierePointTwilight.SetActive(false);
-           } 
-    } */
 }

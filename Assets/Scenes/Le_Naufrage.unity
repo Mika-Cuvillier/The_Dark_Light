@@ -1256,6 +1256,7 @@ MonoBehaviour:
   leCube: {fileID: 92148236}
   imageCube: {fileID: 1053990557}
   barreVie: {fileID: 41677480}
+  indicatifInventaire: {fileID: 0}
   hauteurSaut: 30
   ajoutGravite: -0.7
 --- !u!4 &268024116 stripped
@@ -3183,6 +3184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lePerso: {fileID: 268024113}
+  slime: {fileID: 966229819}
+  fantome: {fileID: 960484879}
+  chauvesouris: {fileID: 834274576}
+  lapin: {fileID: 2141478663}
 --- !u!1 &741577731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4589,6 +4594,9 @@ MonoBehaviour:
   LumiereDirectionalJour: {fileID: 705507993}
   LumiereDirectionalNuit: {fileID: 708873848}
   LumiereDirectionalTwilight: {fileID: 2104034999}
+  MusiqueOn: {fileID: 1726044068}
+  jourMusique: {fileID: 8300000, guid: c82aca7a47f8da94d9febfd09cbe9367, type: 3}
+  nuitMusique: {fileID: 8300000, guid: 8de0a51e6e2b0b94b8a4a37a8a2b788f, type: 3}
 --- !u!1 &1053990557
 GameObject:
   m_ObjectHideFlags: 0
@@ -6879,7 +6887,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c82aca7a47f8da94d9febfd09cbe9367, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.714
   m_Pitch: 0.96
   Loop: 1
@@ -8045,6 +8053,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lePerso: {fileID: 268024113}
+  slime: {fileID: 966229819}
+  fantome: {fileID: 960484879}
+  chauvesouris: {fileID: 834274576}
+  lapin: {fileID: 2141478663}
 --- !u!1 &2141478663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100024, guid: 05b0336cad2ece64b99ce054ed619f4c,
