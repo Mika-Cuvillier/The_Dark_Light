@@ -24,6 +24,7 @@ public class DeplacementPersonnage : MonoBehaviour
 
     // Ajout par Tamyla :
     public AudioClip sonObjet; // Audio Clip du son lorsqu'un objet est ramassé
+    public AudioClip sonEpee; // Audio Clip lorsqu'on attaque avec l'épée
 
     void Start()
     {
@@ -80,6 +81,8 @@ public class DeplacementPersonnage : MonoBehaviour
             {
                 GetComponent<Animator>().SetBool("épée", true);
                 Invoke("EnleverAnimationEpee", 0.2f);
+                personnage.GetComponent<AudioSource>().clip = sonEpee;
+                personnage.GetComponent<AudioSource>().Play();
             }
 
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
