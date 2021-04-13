@@ -8,6 +8,7 @@ TagManager:
   - Ennemi
   - objInventaire
   - epe
+  - epee
   layers:
   - Default
   - TransparentFX
