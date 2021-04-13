@@ -28,8 +28,11 @@ public class Ennemis : MonoBehaviour
             GetComponent<Animator>().SetBool("mort", true);
             GetComponent<NavMeshAgent>().enabled = false; 
             gameObject.tag = "Untagged"; 
-            GetComponent<Collider>().enabled = false; 
-            Destroy(gameObject, 2f); 
+            GetComponent<Collider>().enabled = false;
+            Destroy(gameObject, 2f);
+
+            // Ajouter par Tamyla
+            GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
         }
     }
 
@@ -40,7 +43,10 @@ public class Ennemis : MonoBehaviour
             GetComponent<NavMeshAgent>().enabled = false; 
             gameObject.tag = "Untagged"; 
             GetComponent<Collider>().enabled = false; 
-            Destroy(gameObject, 2f); 
+            Destroy(gameObject, 2f);
+
+            // Ajouter par Tamyla
+            GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
         }
     }
 }
