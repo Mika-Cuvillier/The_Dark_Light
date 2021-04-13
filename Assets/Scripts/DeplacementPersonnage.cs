@@ -22,6 +22,9 @@ public class DeplacementPersonnage : MonoBehaviour
     private bool auSol;
     Rigidbody rigidbodyPersonnage;
 
+    // Ajout par Tamyla :
+    public AudioClip sonObjet; // Audio Clip du son lorsqu'un objet est ramassé
+
     void Start()
     {
         rigidbodyPersonnage = GetComponent<Rigidbody>();
@@ -98,6 +101,10 @@ public class DeplacementPersonnage : MonoBehaviour
                 epee.SetActive(false);
                 nbObjetRamasser += 1;
                 indicatifInventaire.text += nbObjetRamasser;
+
+            // Ajout par Tamyla : Son ramassage d'objet
+            personnage.GetComponent<AudioSource>().clip = sonObjet;
+            personnage.GetComponent<AudioSource>().Play();
         }
 
     }
