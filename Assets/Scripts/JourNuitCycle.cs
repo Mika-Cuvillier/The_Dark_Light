@@ -23,14 +23,14 @@ public class JourNuitCycle : MonoBehaviour
     public GameObject LumiereDirectionalNuit;
     public GameObject LumiereDirectionalTwilight;
 
-    // Object contenant la musique de fond
+    // MUSIQUES
     public GameObject MusiqueOn;
-
     public AudioClip jourMusique;
     public AudioClip nuitMusique;
 
     void Start()
     {
+        // On commence le jeu le jour
         Invoke("LumiereJour", 1f);
     }
 
@@ -45,6 +45,7 @@ public class JourNuitCycle : MonoBehaviour
         LumiereDirectionalNuit.SetActive(false);
         LumierePointNuit.SetActive(false);
 
+        // Changement de l'AudioClip pour la musique de jour
         MusiqueOn.GetComponent<AudioSource>().clip = jourMusique;
         MusiqueOn.GetComponent<AudioSource>().Play();
 
@@ -79,6 +80,7 @@ public class JourNuitCycle : MonoBehaviour
         LumiereDirectionalTwilight.SetActive(false);
         LumierePointTwilight.SetActive(false);
 
+        // Changement de l'AudioClip pour la musique de nuit
         MusiqueOn.GetComponent<AudioSource>().clip = nuitMusique;
         MusiqueOn.GetComponent<AudioSource>().Play();
 

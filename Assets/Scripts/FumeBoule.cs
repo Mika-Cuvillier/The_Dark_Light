@@ -18,6 +18,7 @@ public class FumeBoule : MonoBehaviour
         fume.transform.Translate(0f, 0.5f, 0.5f);
         Destroy(fume, 0.7f);
         Destroy(gameObject);
+
     }
     
     
