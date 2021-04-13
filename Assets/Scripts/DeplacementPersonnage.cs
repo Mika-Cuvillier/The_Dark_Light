@@ -9,7 +9,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject camera3emePersonne;
     public GameObject personnage;
     public GameObject pivotRotation;
-    public GameObject leCube; // objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
+    public GameObject lepe; // épé ramasser dans l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageCube;
     public Image barreVie;
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
@@ -97,11 +97,11 @@ public class DeplacementPersonnage : MonoBehaviour
     //******************************************************** DÉTECTTION COLLISION **************************************//
     void OnCollisionEnter(Collision infosCollission)
     {
-        if (infosCollission.gameObject.tag == "cube")
+        if (infosCollission.gameObject.tag == "epe")
         {
            
                 imageCube.SetActive(true);
-                leCube.SetActive(false);
+                lepe.SetActive(false);
                 nbObjetRamasser += 1;
                 indicatifInventaire.text += nbObjetRamasser;
 
