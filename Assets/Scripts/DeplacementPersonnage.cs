@@ -9,7 +9,11 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject camera3emePersonne;
     public GameObject personnage;
     public GameObject pivotRotation;
+<<<<<<< Updated upstream
     public GameObject lepe; // épé ramasser dans l'inventaire Marc-Antoine Sicotte 2021-03-30
+=======
+    public GameObject epee; // objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
+>>>>>>> Stashed changes
     public GameObject imageCube;
     public Image barreVie;
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
@@ -82,31 +86,33 @@ public class DeplacementPersonnage : MonoBehaviour
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
 
 
-            barreVie.fillAmount += 0.0001f;
-            if (Input.GetKeyDown("b"))
-            {
-
-                barreVie.fillAmount -= 0.1f;
-            }
-
-           
+            barreVie.fillAmount += 0.00001f;
         }
 
     }
 
     //******************************************************** DÉTECTTION COLLISION **************************************//
-    void OnCollisionEnter(Collision infosCollission)
+    void OnCollisionEnter(Collision infosCollision)
     {
+<<<<<<< Updated upstream
         if (infosCollission.gameObject.tag == "epe")
         {
            
                 imageCube.SetActive(true);
                 lepe.SetActive(false);
+=======
+        if (infosCollision.gameObject.tag == "epee")
+        {
+           
+                imageCube.SetActive(true);
+                epee.SetActive(false);
+>>>>>>> Stashed changes
                 nbObjetRamasser += 1;
                 indicatifInventaire.text += nbObjetRamasser;
+        }
 
-
-
+        if(infosCollision.gameObject.tag == "Ennemi"){ 
+                barreVie.fillAmount -= 0.2f;
         }
     }
 
@@ -122,4 +128,5 @@ public class DeplacementPersonnage : MonoBehaviour
     void EnleverAnimationEpee(){
         GetComponent<Animator>().SetBool("épée", false);
     }
+    
 }

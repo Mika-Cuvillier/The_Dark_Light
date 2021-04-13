@@ -9,7 +9,7 @@ public class GestionCheckpoints : MonoBehaviour
     public Image barreVie;
     void Update()
     {
-        if(barreVie.fillAmount <= 0){
+        if(barreVie.fillAmount <= 0.001){
             if(SceneManager.GetActiveScene().name == "Le_Naufrage")
             {
                 SceneManager.LoadScene("Le_Naufrage");
