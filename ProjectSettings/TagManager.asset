@@ -7,6 +7,7 @@ TagManager:
   - cube
   - Ennemi
   - objInventaire
+  - epe
   layers:
   - Default
   - TransparentFX
