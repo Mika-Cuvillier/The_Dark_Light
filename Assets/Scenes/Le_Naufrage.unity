@@ -1085,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223461992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.033, y: 1.1230011, z: 0.718}
+  m_LocalPosition: {x: -0.033, y: 1.27, z: 0.718}
   m_LocalScale: {x: 0.48436, y: 0.48436, z: 0.48436}
   m_Children: []
   m_Father: {fileID: 268024116}
@@ -1103,6 +1103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea06d0341ea25d4e8c1e42843c024ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bouleDeFeu: {fileID: 223461992}
+  epee: {fileID: 459822282}
+  personnage: {fileID: 268024113}
 --- !u!114 &223461999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bouleDeFeu: {fileID: 223461992}
+  personnage: {fileID: 268024113}
+  epee: {fileID: 459822282}
   jaugeFeu: {fileID: 827887770}
   vitesseBouleDeFeu: 20
 --- !u!114 &268024115
@@ -2064,6 +2069,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 122156131}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &459822284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459822282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed8c8eeb711b90418fadfb29415c683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &459822287
 Animator:
   serializedVersion: 3
@@ -2083,18 +2100,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &459822288
-MonoBehaviour:
+--- !u!64 &459822288
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459822282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed8c8eeb711b90418fadfb29415c683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: dd0682cd55d7f8342b8026ebb1cfc4a5, type: 3}
+--- !u!54 &459822289
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459822282}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &466013482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4203,7 +4238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c88e3a644467f42adef8be3b405d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vie: 100
+  vie: 150
   positionPerso: {fileID: 268024113}
 --- !u!195 &960484881
 NavMeshAgent:
@@ -4259,7 +4294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c88e3a644467f42adef8be3b405d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vie: 150
+  vie: 300
   positionPerso: {fileID: 268024113}
 --- !u!195 &966229821
 NavMeshAgent:

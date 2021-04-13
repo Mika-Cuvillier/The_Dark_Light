@@ -23,6 +23,17 @@ public class Ennemis : MonoBehaviour
     }
 
     public void ToucheBouleDeFeu(){
+        vie = vie -75;
+        if(vie <= 0){
+            GetComponent<Animator>().SetBool("mort", true);
+            GetComponent<NavMeshAgent>().enabled = false; 
+            gameObject.tag = "Untagged"; 
+            GetComponent<Collider>().enabled = false; 
+            Destroy(gameObject, 2f); 
+        }
+    }
+
+    public void AttaqueEpee(){
         vie = vie -50;
         if(vie <= 0){
             GetComponent<Animator>().SetBool("mort", true);

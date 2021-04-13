@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class TirBouleDeFeu : MonoBehaviour
 {
     public GameObject bouleDeFeu;
+    public GameObject personnage;
+    public GameObject epee;
     public Image jaugeFeu;
     public float vitesseBouleDeFeu;
     private bool peutTirer;
@@ -26,10 +28,12 @@ public class TirBouleDeFeu : MonoBehaviour
             GetComponent<Animator>().SetBool("bouleDeFeu", true);
             Invoke("EnleverAnimationBouleDeFeu", 0.5f);
         }
+        Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), epee.GetComponent<Collider>());
+        Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), personnage.GetComponent<Collider>());
     }
-
+ 
     void Tir(){
-        jaugeFeu.fillAmount -= 1f; // Descend la jauge de feu au minimum après avoir tirer Marc-Antoine Sicotte 2021-03-30
+        jaugeFeu.fillAmount -= 1f; // Descend la jauge de feu au minimum aprï¿½s avoir tirer Marc-Antoine Sicotte 2021-03-30
         peutTirer = false;
         Invoke("ActiveTir", 5f);
         Invoke("NouvelleBouleDeFeu", 0.4f);
@@ -40,7 +44,7 @@ public class TirBouleDeFeu : MonoBehaviour
 
     void ActiveTir(){
         peutTirer = true;
-        jaugeFeu.fillAmount += 1f; // Remonte la jauge de feu au maximum après avoir reactiver le tir Marc-Antoine Sicotte 2021-03-30
+        jaugeFeu.fillAmount += 1f; // Remonte la jauge de feu au maximum aprï¿½s avoir reactiver le tir Marc-Antoine Sicotte 2021-03-30
 
     }
 
