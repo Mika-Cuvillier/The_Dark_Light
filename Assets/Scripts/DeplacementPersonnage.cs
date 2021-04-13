@@ -12,6 +12,8 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject leCube; // objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageCube;
     public Image barreVie;
+    public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
+    private int nbObjetRamasser; // Nombre d'objet ramasser (cube) Marc-Antoine Sicotte 2021-04-13
     float vitesseDeplacement;
     public float hauteurSaut;
     public float ajoutGravite;
@@ -86,6 +88,8 @@ public class DeplacementPersonnage : MonoBehaviour
 
                 barreVie.fillAmount -= 0.1f;
             }
+
+           
         }
 
     }
@@ -98,9 +102,11 @@ public class DeplacementPersonnage : MonoBehaviour
            
                 imageCube.SetActive(true);
                 leCube.SetActive(false);
-            
-   
-            
+                nbObjetRamasser += 1;
+                indicatifInventaire.text += nbObjetRamasser;
+
+
+
         }
     }
 
