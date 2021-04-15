@@ -1264,7 +1264,7 @@ MonoBehaviour:
   pivotRotation: {fileID: 250733279}
   vraisEpee: {fileID: 459822282}
   epee: {fileID: 844854517}
-  imageCube: {fileID: 1053990557}
+  imageEpee: {fileID: 1053990557}
   barreVie: {fileID: 41677480}
   indicatifInventaire: {fileID: 1573813625}
   hauteurSaut: 30
@@ -3226,10 +3226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lePerso: {fileID: 268024113}
-  slime: {fileID: 966229819}
-  fantome: {fileID: 960484879}
-  chauvesouris: {fileID: 834274576}
-  lapin: {fileID: 2141478663}
 --- !u!1 &741577731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,7 +3468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 783154020}
   - component: {fileID: 783154019}
-  - component: {fileID: 783154018}
   - component: {fileID: 783154017}
   m_Layer: 0
   m_Name: CameraDialogue
@@ -3495,14 +3490,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laCible: {fileID: 268024113}
   distance: {x: -1.2, y: 2, z: 2}
---- !u!81 &783154018
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783154016}
-  m_Enabled: 1
 --- !u!20 &783154019
 Camera:
   m_ObjectHideFlags: 0
@@ -4967,7 +4954,7 @@ GameObject:
   - component: {fileID: 1053990560}
   - component: {fileID: 1053990559}
   m_Layer: 5
-  m_Name: Image
+  m_Name: imgEpee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7247,6 +7234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melodie: {fileID: 8300000, guid: c82aca7a47f8da94d9febfd09cbe9367, type: 3}
+  Audio: {fileID: 1177631713}
 --- !u!212 &1726044075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8315,10 +8303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lePerso: {fileID: 268024113}
-  slime: {fileID: 966229819}
-  fantome: {fileID: 960484879}
-  chauvesouris: {fileID: 834274576}
-  lapin: {fileID: 2141478663}
 --- !u!1 &2141478663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100024, guid: 05b0336cad2ece64b99ce054ed619f4c,

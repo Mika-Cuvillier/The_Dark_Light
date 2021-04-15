@@ -14,7 +14,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject pivotRotation; // updated du pivot pour la caméra
     public GameObject vraisEpee; // Variable contenant l'epee dans la main du perso Marc-Antoine Sicotte 2021-04-15
     public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
-    public GameObject imageCube; // Ajout par M-A
+    public GameObject imageEpee; // Ajout par M-A
     public Image barreVie; // Ajout par M-A
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
     private int nbObjetRamasser; // Nombre d'objet ramasser (cube) Marc-Antoine Sicotte 2021-04-13
@@ -110,17 +110,17 @@ public class DeplacementPersonnage : MonoBehaviour
     void OnCollisionEnter(Collision infosCollision)
     {
 
-        if (infosCollision.gameObject.tag == "epee")
+        if (infosCollision.gameObject.tag == "epee") // La collision pour ramasser l'épée parterre Marc-Antoine Sicotte 2021-04-15;
         {
            
-                imageCube.SetActive(true);
+                imageEpee.SetActive(true);
                 epee.SetActive(false);
                 nbObjetRamasser += 1;
                 indicatifInventaire.text += nbObjetRamasser;
 
 
-            personnage.GetComponent<AudioSource>().clip = sonObjet;
-            personnage.GetComponent<AudioSource>().Play();
+            personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
+            personnage.GetComponent<AudioSource>().Play(); // Tamyla
                 vraisEpee.SetActive(true);
         }
 
