@@ -7,6 +7,7 @@ public class Ennemis : MonoBehaviour
 {
     public float vie;
     public GameObject positionPerso;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,15 @@ public class Ennemis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(DeplacementPersonnage.jeuPause == true)
+        {
+            GetComponent<NavMeshAgent>().enabled = false;
+        }
+        else
+        {
+            GetComponent<NavMeshAgent>().enabled = true;
+        }
+        
         if(GetComponent<NavMeshAgent>().enabled == true){ 
             GetComponent<NavMeshAgent>().SetDestination(positionPerso.transform.position);
         }
