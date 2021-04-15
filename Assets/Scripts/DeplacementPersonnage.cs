@@ -90,8 +90,10 @@ public class DeplacementPersonnage : MonoBehaviour
                 forceDuSaut = hauteurSaut;
             }
 
+            // Si le clique droit est activé 
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                // Attaque avec l'épée
                 GetComponent<Animator>().SetBool("épée", true);
                 Invoke("EnleverAnimationEpee", 0.2f);
                 personnage.GetComponent<AudioSource>().clip = sonEpee;
@@ -124,6 +126,7 @@ public class DeplacementPersonnage : MonoBehaviour
                 vraisEpee.SetActive(true);
         }
 
+        // Si on entre en collision avec un ennemi
         if(infosCollision.gameObject.tag == "Ennemi")
         {
             barreVie.fillAmount -= 0.2f;

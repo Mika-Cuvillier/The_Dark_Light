@@ -5,16 +5,20 @@ using UnityEngine.AI;
 
 public class GestionEnnemis : MonoBehaviour
 {
+    /// ******************
+    /// PAR MIKA CUVILLIER
+    /// ******************
 
-    public GameObject ChauveSouris;
-    public GameObject Fantome;
-    public GameObject Lapin;
-    public GameObject Slime;
+    public GameObject ChauveSouris; // Référence à l'ennemi chauve souris
+    public GameObject Fantome; // Référence à l'ennemi fantôme
+    public GameObject Lapin; // Référence à l'ennemi lapin
+    public GameObject Slime; // Référence à l'ennemi slime
 
-    public float vie;
+    public float vie; // nombre de vie
     // Start is called before the first frame update
     void Start()
     {
+        // Création des ennemis
         InvokeRepeating("CreationChauveSouris", 2f, 15f);
         InvokeRepeating("CreationFantomes", 2f, 9f);
         InvokeRepeating("CreationLapins", 2f, 15f);
@@ -26,6 +30,7 @@ public class GestionEnnemis : MonoBehaviour
     {
     }
 
+    // Créations des ennemis avec un Instantiate (copie)
     void CreationChauveSouris(){
         GameObject nouvelleChauveSouris= Instantiate(ChauveSouris);
         nouvelleChauveSouris.SetActive(true);

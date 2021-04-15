@@ -6,9 +6,15 @@ using UnityEngine.UI;
 
 public class GestionCheckpoints : MonoBehaviour
 {
-    public Image barreVie;
+    /// ******************
+    /// PAR MIKA CUVILLIER
+    /// ******************
+    
+    public Image barreVie; // Image de la barre de vie
+
     void Update()
     {
+       // Si on n'a plus de vie, on reload la scène de départ (pour le moment)
         if(barreVie.fillAmount <= 0.001){
             if(SceneManager.GetActiveScene().name == "Le_Naufrage")
             {

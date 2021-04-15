@@ -6,16 +6,21 @@ using UnityEngine.UI;
 
 public class TirBouleDeFeu : MonoBehaviour
 {
-    public GameObject bouleDeFeu;
-    public GameObject personnage;
-    public GameObject epee;
-    public Image jaugeFeu;
-    public float vitesseBouleDeFeu;
-    private bool peutTirer;
+    /// ******************
+    /// PAR MIKA CUVILLIER
+    /// ******************
+ 
+    public GameObject bouleDeFeu; // Game Object de la boule de feu
+    public GameObject personnage; // Game Object du personnage
+    public GameObject epee; // Game Object de l'épée
+    public Image jaugeFeu; // Image de la jauge de feu
+    public float vitesseBouleDeFeu; // la vitesse de la boule de feu
+    private bool peutTirer; // booléeane si on peut tirer une nouvelle boule de feu
 
     // Start is called before the first frame update
     void Start()
     {
+        // Au départ, on peut tirer une boule de feu
         peutTirer = true;
         GetComponent<Animator>().SetBool("bouleDeFeu", false);
     }
@@ -23,6 +28,7 @@ public class TirBouleDeFeu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Si on fait un clique gauche et qu'on peut tirer
         if(Input.GetKeyDown(KeyCode.Mouse1) && peutTirer){
             Tir();
             GetComponent<Animator>().SetBool("bouleDeFeu", true);
@@ -43,6 +49,7 @@ public class TirBouleDeFeu : MonoBehaviour
 
 
     void ActiveTir(){
+        // On peut tirer à nouveau
         peutTirer = true;
         jaugeFeu.fillAmount += 1f; // Remonte la jauge de feu au maximum apr�s avoir reactiver le tir Marc-Antoine Sicotte 2021-03-30
 

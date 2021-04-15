@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class BouleDeFeu : MonoBehaviour
 {
-    public GameObject bouleDeFeu;
-    public GameObject epee;
-    public GameObject personnage;
+    /// ******************
+    /// PAR MIKA CUVILLIER
+    /// ******************
+   
+    public GameObject bouleDeFeu; // Game Object à la boule de feu
+    public GameObject epee; // Game Object de l'épée
+    public GameObject personnage; // Game Object du personnage
 
     void Start()
     {
@@ -16,6 +20,7 @@ public class BouleDeFeu : MonoBehaviour
 
     private void OnCollisionEnter(Collision infoCollisions)
     {
+        //Si la boule de feu touche un ennemi appelle fonction touchebouledefeu dans le scipte de l'ennemi
         if(infoCollisions.gameObject.tag == "Ennemi"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
         }
