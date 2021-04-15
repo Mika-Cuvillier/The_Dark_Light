@@ -18,7 +18,7 @@ public class GestionCheckpoints : MonoBehaviour
         if(barreVie.fillAmount <= 0.001){
             if(SceneManager.GetActiveScene().name == "Le_Naufrage")
             {
-                SceneManager.LoadScene("Le_Naufrage");
+                SceneManager.LoadScene("Finale_Perdue");
             }
             /*else if(SceneManager.GetActiveScene().name = "")
             {
