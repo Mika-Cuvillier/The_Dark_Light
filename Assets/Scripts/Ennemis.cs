@@ -49,4 +49,15 @@ public class Ennemis : MonoBehaviour
             GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
         }
     }
+
+    public void animationAttaque()
+    {
+        GetComponent<Animator>().SetBool("attaque", true);
+        Invoke("cancelAttaque", 2f);
+    }
+
+    void cancelAttaque()
+    {
+        GetComponent<Animator>().SetBool("attaque", false);
+    }
 }

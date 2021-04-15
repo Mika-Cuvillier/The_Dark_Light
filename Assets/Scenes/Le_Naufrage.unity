@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: dd0682cd55d7f8342b8026ebb1cfc4a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0682cd55d7f8342b8026ebb1cfc4a5, type: 3}
@@ -1262,6 +1262,7 @@ MonoBehaviour:
   camera3emePersonne: {fileID: 1177631713}
   personnage: {fileID: 268024113}
   pivotRotation: {fileID: 250733279}
+  vraisEpee: {fileID: 459822282}
   epee: {fileID: 844854517}
   imageCube: {fileID: 1053990557}
   barreVie: {fileID: 41677480}

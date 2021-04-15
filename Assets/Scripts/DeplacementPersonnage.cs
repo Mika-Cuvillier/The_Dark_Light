@@ -9,6 +9,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject camera3emePersonne;
     public GameObject personnage;
     public GameObject pivotRotation;
+    public GameObject vraisEpee; // Variable contenant l'epee dans la main du perso Marc-Antoine Sicotte 2021-04-15
     public GameObject epee; // objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageCube;
     public Image barreVie;
@@ -105,9 +106,17 @@ public class DeplacementPersonnage : MonoBehaviour
                 nbObjetRamasser += 1;
                 indicatifInventaire.text += nbObjetRamasser;
 
-            // Ajout par Tamyla : Son ramassage d'objet
+
             personnage.GetComponent<AudioSource>().clip = sonObjet;
             personnage.GetComponent<AudioSource>().Play();
+                vraisEpee.SetActive(true);
+        }
+
+        if(infosCollision.gameObject.tag == "Ennemi")
+        {
+            barreVie.fillAmount -= 0.2f;
+            infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
+
         }
 
     }
