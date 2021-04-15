@@ -5,23 +5,26 @@ using UnityEngine.UI;
 
 public class DeplacementPersonnage : MonoBehaviour
 {
-    
-    public GameObject camera3emePersonne;
-    public GameObject personnage;
-    public GameObject pivotRotation;
+    /// ************************
+    /// PAR MIKA CUVILLIER
+    /// *************************
+
+    public GameObject camera3emePersonne; // Variable contenant la caméra 3e personne
+    public GameObject personnage; // GameObject du personnage
+    public GameObject pivotRotation; // updated du pivot pour la caméra
     public GameObject vraisEpee; // Variable contenant l'epee dans la main du perso Marc-Antoine Sicotte 2021-04-15
-    public GameObject epee; // objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
-    public GameObject imageCube;
-    public Image barreVie;
+    public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
+    public GameObject imageCube; // Ajout par M-A
+    public Image barreVie; // Ajout par M-A
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
     private int nbObjetRamasser; // Nombre d'objet ramasser (cube) Marc-Antoine Sicotte 2021-04-13
-    float vitesseDeplacement;
-    public float hauteurSaut;
-    public float ajoutGravite;
-    private float forceDuSaut;
+    float vitesseDeplacement; // Variable pour la vitesse de déplacement
+    public float hauteurSaut; // Variable pour la hauteur du saut
+    public float ajoutGravite; // Variable pour la gravité
+    private float forceDuSaut; // Variable pour la force du saut
     public static bool jeuPause; // Variable Static pour permettre d'arrêter la détection des touches quand le jeu est en pause Marc-Antoine Sicotte 2021-03-24
-    private bool auSol;
-    Rigidbody rigidbodyPersonnage;
+    private bool auSol; // booléenne lorsque le personnage est au sol
+    Rigidbody rigidbodyPersonnage; // Rigidbody du personnage
 
     // Ajout par Tamyla :
     public AudioClip sonObjet; // Audio Clip du son lorsqu'un objet est ramassé
@@ -29,21 +32,26 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void Start()
     {
+        // On défini le rigidbody du personnage
         rigidbodyPersonnage = GetComponent<Rigidbody>();
     }
 
     
     void Update()
     {
+        // Si le jeu n'est pas en pause et que la caméra dialogue n'est pas activé
        if((jeuPause == false && GestionCameras.dialogue == false))
         {
-            float hDeplacement = Input.GetAxisRaw("Horizontal");
-            float vDeplacement = Input.GetAxisRaw("Vertical");
+            float hDeplacement = Input.GetAxisRaw("Horizontal"); // déplacement horizontal
+            float vDeplacement = Input.GetAxisRaw("Vertical"); // déplacement vertical
 
+            // Variable direction de déplacement
             Vector3 directionDep = camera3emePersonne.transform.forward * vDeplacement + camera3emePersonne.transform.right * hDeplacement;
 
             directionDep.y = 0;
-            if (directionDep != Vector3.zero)
+
+            // Déplacement du personnage
+            if (directionDep != Vector3.zero) 
             {
                 transform.forward = directionDep;
                 rigidbodyPersonnage.velocity = (transform.forward * vitesseDeplacement) + new Vector3(0, rigidbodyPersonnage.velocity.y, 0);
@@ -53,6 +61,7 @@ public class DeplacementPersonnage : MonoBehaviour
                 rigidbodyPersonnage.velocity = new Vector3(0, rigidbodyPersonnage.velocity.y, 0);
             }
 
+            // Accélération du personnage lors de son déplacement avec la touche w
             if (vitesseDeplacement <= 10f && Input.GetKey("w"))
             {
                 vitesseDeplacement += 0.05f;
@@ -66,13 +75,16 @@ public class DeplacementPersonnage : MonoBehaviour
                 vitesseDeplacement = 0;
             }
 
+            // Animation de la course selon la vitesse de déplacement
             GetComponent<Animator>().SetFloat("vitesse", vitesseDeplacement);
 
-            RaycastHit infoCollision;
-            auSol = Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.2f, -Vector3.up, out infoCollision, 0.8f);
+            RaycastHit infoCollision; // Raycast pour le saut
+            auSol = Physics.SphereCast(transform.position + new Vector3(0f, 0.5f, 0f), 0.2f, -Vector3.up, out infoCollision, 0.8f); // définition de la variable au sol
 
+            // Animation du saut
             GetComponent<Animator>().SetBool("sauter", !auSol);
 
+            // Si la touche espace est activé et que le personnage est au sol
             if (Input.GetKeyDown(KeyCode.Space) && auSol)
             {
                 forceDuSaut = hauteurSaut;
