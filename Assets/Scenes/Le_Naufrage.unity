@@ -1224,6 +1224,8 @@ MonoBehaviour:
   hauteurPivot: 2
   distanceCameraLoin: -5
   distanceCameraPret: -2
+  vitesseCameraX: 5
+  vitesseCameraY: 1
 --- !u!1 &268024113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 444bbccee86bb6f40987875752f1f29a,
