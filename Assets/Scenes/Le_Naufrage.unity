@@ -1264,7 +1264,7 @@ MonoBehaviour:
   pivotRotation: {fileID: 250733279}
   vraisEpee: {fileID: 459822282}
   epee: {fileID: 844854517}
-  imageEpee: {fileID: 1053990557}
+  imageEpee: {fileID: 459822282}
   barreVie: {fileID: 41677480}
   indicatifInventaire: {fileID: 1573813625}
   hauteurSaut: 30
@@ -3368,7 +3368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862178472220348, guid: a89eef680e28b83449e3a6ba46792fbe, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4862178472220348, guid: a89eef680e28b83449e3a6ba46792fbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6269,7 +6269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4380562535923756, guid: 05723fa5edef5fa4ab72eb90ae0bf7b0, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4380562535923756, guid: 05723fa5edef5fa4ab72eb90ae0bf7b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7870,6 +7870,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Personnage
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 444bbccee86bb6f40987875752f1f29a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 444bbccee86bb6f40987875752f1f29a,
         type: 3}
