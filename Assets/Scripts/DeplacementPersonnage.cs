@@ -34,6 +34,7 @@ public class DeplacementPersonnage : MonoBehaviour
     {
         // On défini le rigidbody du personnage
         rigidbodyPersonnage = GetComponent<Rigidbody>();
+        vraisEpee.GetComponent<Collider>().enabled = false;
     }
 
     
@@ -98,6 +99,8 @@ public class DeplacementPersonnage : MonoBehaviour
                 Invoke("EnleverAnimationEpee", 0.2f);
                 personnage.GetComponent<AudioSource>().clip = sonEpee;
                 personnage.GetComponent<AudioSource>().Play();
+                vraisEpee.GetComponent<Collider>().enabled = true;
+                Invoke("RetirerColliderEpee", 1f);
             }
 
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
@@ -147,6 +150,10 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void EnleverAnimationEpee(){
         GetComponent<Animator>().SetBool("épée", false);
+    }
+
+    void RetirerColliderEpee(){
+        vraisEpee.GetComponent<Collider>().enabled = false;
     }
     
 }

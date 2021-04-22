@@ -10,7 +10,7 @@ public class Ennemis : MonoBehaviour
     /// ******************
 
     public float vie; // nombre de vie de l'ennemi
-    public GameObject positionPerso; // référence au personnage
+    public GameObject positionPerso; // rï¿½fï¿½rence au personnage
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Ennemis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Si le dans le scripte de déplacement le jeu est sur pause
+        // Si le dans le scripte de dï¿½placement le jeu est sur pause
         if(DeplacementPersonnage.jeuPause == true)
         {
             GetComponent<NavMeshAgent>().enabled = false;
@@ -53,7 +53,7 @@ public class Ennemis : MonoBehaviour
     }
 
     public void AttaqueEpee(){
-        // si l'ennemi touche l'épée on enleve 50 de sa vie
+        // si l'ennemi touche l'ï¿½pï¿½e on enleve 50 de sa vie
         vie = vie -50;
         // si la vie est de 0, alors l'ennemi meurt
         if (vie <= 0){
@@ -73,11 +73,17 @@ public class Ennemis : MonoBehaviour
         // Animation d'attaque
         GetComponent<Animator>().SetBool("attaque", true);
         Invoke("cancelAttaque", 2f);
+        /* Invoke("cancelNavMesh", 2f); */
+        GetComponent<NavMeshAgent>().enabled = false;
+        Invoke("RÃ©activeNavMesh", 3f);
     }
 
     void cancelAttaque()
     {
-        // Arrêt de l'animation d'attaque
+        // Arrï¿½t de l'animation d'attaque
         GetComponent<Animator>().SetBool("attaque", false);
+    }
+    void RÃ©activeNavMesh(){
+        GetComponent<NavMeshAgent>().enabled = true;
     }
 }
