@@ -1266,7 +1266,7 @@ MonoBehaviour:
   pivotRotation: {fileID: 250733279}
   vraisEpee: {fileID: 459822282}
   epee: {fileID: 844854517}
-  imageEpee: {fileID: 459822282}
+  imageEpee: {fileID: 1053990557}
   barreVie: {fileID: 41677480}
   indicatifInventaire: {fileID: 1573813625}
   hauteurSaut: 30
@@ -3815,6 +3815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vie: 25
   positionPerso: {fileID: 268024113}
+  arret: 0
 --- !u!195 &834274578
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4360,6 +4361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vie: 150
   positionPerso: {fileID: 268024113}
+  arret: 0
 --- !u!195 &960484881
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4512,6 +4514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vie: 300
   positionPerso: {fileID: 268024113}
+  arret: 0
 --- !u!195 &966229821
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8330,6 +8333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vie: 25
   positionPerso: {fileID: 268024113}
+  arret: 0
 --- !u!136 &2141478665
 CapsuleCollider:
   m_ObjectHideFlags: 0

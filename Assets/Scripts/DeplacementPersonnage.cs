@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class DeplacementPersonnage : MonoBehaviour
 {
@@ -134,7 +135,6 @@ public class DeplacementPersonnage : MonoBehaviour
         {
             barreVie.fillAmount -= 0.2f;
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
-
         }
 
     }
@@ -155,5 +155,4 @@ public class DeplacementPersonnage : MonoBehaviour
     void RetirerColliderEpee(){
         vraisEpee.GetComponent<Collider>().enabled = false;
     }
-    
 }
