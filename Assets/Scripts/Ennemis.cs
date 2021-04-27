@@ -12,6 +12,7 @@ public class Ennemis : MonoBehaviour
     public float vie; // nombre de vie de l'ennemi
     public GameObject positionPerso; // r�f�rence au personnage
     public bool arret;
+    public float vitesseKnockback;
 
     // Start is called before the first frame update
     void Start()

@@ -143,9 +143,27 @@ public class DeplacementPersonnage : MonoBehaviour
         }
 
         // Si on entre en collision avec un ennemi
-        if(infosCollision.gameObject.tag == "Ennemi")
+        if(infosCollision.gameObject.tag == "Ennemi1")
+        {
+            barreVie.fillAmount -= 0.3f;
+            infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
+        }
+
+        if(infosCollision.gameObject.tag == "Ennemi2")
+        {
+            barreVie.fillAmount -= 0.08f;
+            infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
+        }
+
+        if(infosCollision.gameObject.tag == "Ennemi3")
         {
             barreVie.fillAmount -= 0.2f;
+            infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
+        }
+
+        if(infosCollision.gameObject.tag == "Ennemi4")
+        {
+            barreVie.fillAmount -= 0.15f;
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
 

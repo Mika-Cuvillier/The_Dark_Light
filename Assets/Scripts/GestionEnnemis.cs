@@ -9,20 +9,20 @@ public class GestionEnnemis : MonoBehaviour
     /// PAR MIKA CUVILLIER
     /// ******************
 
-    public GameObject ChauveSouris; // Référence à l'ennemi chauve souris
-    public GameObject Fantome; // Référence à l'ennemi fantôme
-    public GameObject Lapin; // Référence à l'ennemi lapin
-    public GameObject Slime; // Référence à l'ennemi slime
+    public GameObject ChauveSouris; // Rï¿½fï¿½rence ï¿½ l'ennemi chauve souris
+    public GameObject Fantome; // Rï¿½fï¿½rence ï¿½ l'ennemi fantï¿½me
+    public GameObject Lapin; // Rï¿½fï¿½rence ï¿½ l'ennemi lapin
+    public GameObject Slime; // Rï¿½fï¿½rence ï¿½ l'ennemi slime
 
     public float vie; // nombre de vie
     // Start is called before the first frame update
     void Start()
     {
-        // Création des ennemis
-        InvokeRepeating("CreationChauveSouris", 2f, 15f);
-        InvokeRepeating("CreationFantomes", 2f, 9f);
+        // Crï¿½ation des ennemis
+        InvokeRepeating("CreationChauveSouris", 2f, 20f);
+        InvokeRepeating("CreationFantomes", 2f, 25f);
         InvokeRepeating("CreationLapins", 2f, 15f);
-        InvokeRepeating("CreationSlimes", 2f, 20f);
+        InvokeRepeating("CreationSlimes", 2f, 35f);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class GestionEnnemis : MonoBehaviour
     {
     }
 
-    // Créations des ennemis avec un Instantiate (copie)
+    // Crï¿½ations des ennemis avec un Instantiate (copie)
     void CreationChauveSouris(){
         GameObject nouvelleChauveSouris= Instantiate(ChauveSouris);
         nouvelleChauveSouris.SetActive(true);
