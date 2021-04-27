@@ -25,6 +25,7 @@ public class DeplacementPersonnage : MonoBehaviour
     private float forceDuSaut; // Variable pour la force du saut
     public static bool jeuPause; // Variable Static pour permettre d'arrêter la détection des touches quand le jeu est en pause Marc-Antoine Sicotte 2021-03-24
     private bool auSol; // booléenne lorsque le personnage est au sol
+    public bool epeeEnMain;
     Rigidbody rigidbodyPersonnage; // Rigidbody du personnage
 
     // Ajout par Tamyla :
@@ -36,6 +37,7 @@ public class DeplacementPersonnage : MonoBehaviour
         // On défini le rigidbody du personnage
         rigidbodyPersonnage = GetComponent<Rigidbody>();
         vraisEpee.GetComponent<Collider>().enabled = false;
+        epeeEnMain = false;
     }
 
     
@@ -64,13 +66,13 @@ public class DeplacementPersonnage : MonoBehaviour
             }
 
             // Accélération du personnage lors de son déplacement avec la touche w
-            if (vitesseDeplacement <= 10f && Input.GetKey("w"))
+            if (vitesseDeplacement <= 15f && Input.GetKey("w"))
             {
-                vitesseDeplacement += 0.05f;
+                vitesseDeplacement += 0.08f;
             }
             else if (vitesseDeplacement >= 10 && Input.GetKey("w"))
             {
-                vitesseDeplacement = 10;
+                vitesseDeplacement = 15;
             }
             else
             {
@@ -93,7 +95,7 @@ public class DeplacementPersonnage : MonoBehaviour
             }
 
             // Si le clique droit est activé 
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0) && epeeEnMain == true)
             {
                 // Attaque avec l'épée
                 GetComponent<Animator>().SetBool("épée", true);
@@ -112,6 +114,15 @@ public class DeplacementPersonnage : MonoBehaviour
 
     }
 
+     void FixedUpdate(){
+        if(auSol) {
+            GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
+        }else{
+            GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
+        }
+        forceDuSaut = 0f;
+    }
+
     //******************************************************** DÉTECTTION COLLISION **************************************//
     void OnCollisionEnter(Collision infosCollision)
     {
@@ -127,7 +138,8 @@ public class DeplacementPersonnage : MonoBehaviour
 
             personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
             personnage.GetComponent<AudioSource>().Play(); // Tamyla
-                vraisEpee.SetActive(true);
+            vraisEpee.SetActive(true);
+            epeeEnMain = true;
         }
 
         // Si on entre en collision avec un ennemi
@@ -137,15 +149,6 @@ public class DeplacementPersonnage : MonoBehaviour
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
 
-    }
-
-    void FixedUpdate(){
-        if(auSol) {
-            GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
-        }else{
-            GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
-        }
-        forceDuSaut = 0f;
     }
 
     void EnleverAnimationEpee(){
