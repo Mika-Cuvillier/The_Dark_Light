@@ -8,8 +8,8 @@ public class BouleDeFeu : MonoBehaviour
     /// PAR MIKA CUVILLIER
     /// ******************
    
-    public GameObject bouleDeFeu; // Game Object à la boule de feu
-    public GameObject epee; // Game Object de l'épée
+    public GameObject bouleDeFeu; // Game Object ï¿½ la boule de feu
+    public GameObject epee; // Game Object de l'ï¿½pï¿½e
     public GameObject personnage; // Game Object du personnage
 
     void Start()
@@ -21,7 +21,16 @@ public class BouleDeFeu : MonoBehaviour
     private void OnCollisionEnter(Collision infoCollisions)
     {
         //Si la boule de feu touche un ennemi appelle fonction touchebouledefeu dans le scipte de l'ennemi
-        if(infoCollisions.gameObject.tag == "Ennemi"){ 
+        if(infoCollisions.gameObject.tag == "Ennemi1"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
+        }
+        if(infoCollisions.gameObject.tag == "Ennemi2"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
+        }
+        if(infoCollisions.gameObject.tag == "Ennemi3"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
+        }
+        if(infoCollisions.gameObject.tag == "Ennemi4"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
         }
         Destroy(gameObject);
