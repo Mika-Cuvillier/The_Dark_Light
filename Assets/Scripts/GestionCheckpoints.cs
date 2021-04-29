@@ -14,24 +14,20 @@ public class GestionCheckpoints : MonoBehaviour
 
     void Update()
     {
-       // Si on n'a plus de vie, on reload la scène de départ (pour le moment)
+       // Si on n'a plus de vie, on reload la scï¿½ne de dï¿½part (pour le moment)
         if(barreVie.fillAmount <= 0.001){
             if(SceneManager.GetActiveScene().name == "Le_Naufrage")
             {
-                SceneManager.LoadScene("Finale_Perdue");
+                SceneManager.LoadScene("Le_Naufrage");
             }
-            /*else if(SceneManager.GetActiveScene().name = "")
+            else if(SceneManager.GetActiveScene().name == "Lagrotte")
             {
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene("Lagrotte");
             }
-            else if(SceneManager.GetActiveScene().name = "")
+            else
             {
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene("LaProphetie");
             }
-            else if(SceneManager.GetActiveScene().name = "")
-            {
-                SceneManager.LoadScene("");
-            }*/
         }
     }
 }

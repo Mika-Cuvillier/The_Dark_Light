@@ -26,6 +26,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public static bool jeuPause; // Variable Static pour permettre d'arrêter la détection des touches quand le jeu est en pause Marc-Antoine Sicotte 2021-03-24
     private bool auSol; // booléenne lorsque le personnage est au sol
     public bool epeeEnMain;
+    private bool triggerEpee;
     Rigidbody rigidbodyPersonnage; // Rigidbody du personnage
 
     // Ajout par Tamyla :
@@ -108,7 +109,6 @@ public class DeplacementPersonnage : MonoBehaviour
 
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
 
-
             barreVie.fillAmount += 0.00001f;
         }
 
@@ -127,19 +127,10 @@ public class DeplacementPersonnage : MonoBehaviour
     void OnCollisionEnter(Collision infosCollision)
     {
 
-        if (infosCollision.gameObject.tag == "epee") // La collision pour ramasser l'épée parterre Marc-Antoine Sicotte 2021-04-15;
+       if (infosCollision.gameObject.tag == "epee") // La collision pour ramasser l'épée parterre Marc-Antoine Sicotte 2021-04-15;
         {
-           
-                imageEpee.SetActive(true);
-                epee.SetActive(false);
-                nbObjetRamasser += 1;
-                indicatifInventaire.text += nbObjetRamasser;
-
-
-            personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
-            personnage.GetComponent<AudioSource>().Play(); // Tamyla
-            vraisEpee.SetActive(true);
-            epeeEnMain = true;
+           triggerEpee = true;
+           InvokeRepeating("RamasserEpee", 0.1f, 0.1f);
         }
 
         // Si on entre en collision avec un ennemi
@@ -175,5 +166,19 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void RetirerColliderEpee(){
         vraisEpee.GetComponent<Collider>().enabled = false;
+    }
+
+    void RamasserEpee(){
+        if(Input.GetKey(KeyCode.E) && triggerEpee == true){ 
+                nbObjetRamasser += 1;
+                indicatifInventaire.text += nbObjetRamasser;
+                imageEpee.SetActive(true);
+                epee.SetActive(false);
+                personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
+                personnage.GetComponent<AudioSource>().Play(); // Tamyla
+                vraisEpee.SetActive(true);
+                epeeEnMain = true;
+                triggerEpee = false;
+            }
     }
 }

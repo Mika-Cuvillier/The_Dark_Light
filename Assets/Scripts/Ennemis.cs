@@ -13,6 +13,7 @@ public class Ennemis : MonoBehaviour
     public GameObject positionPerso; // r�f�rence au personnage
     public bool arret;
     public float vitesseKnockback;
+    /* private float forceKnockback =10; */
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,9 @@ public class Ennemis : MonoBehaviour
             gameObject.tag = "Untagged"; 
             GetComponent<Collider>().enabled = false; 
             Destroy(gameObject, 2f);
+            /* Vector3 direction = transform.position - transform.position;
+            direction.y = 0;
+            GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); */
 
             // Ajouter par Tamyla
             GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
