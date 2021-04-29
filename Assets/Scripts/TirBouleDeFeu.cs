@@ -29,13 +29,17 @@ public class TirBouleDeFeu : MonoBehaviour
     void Update()
     {
         // Si on fait un clique gauche et qu'on peut tirer
-        if(Input.GetKeyDown(KeyCode.Mouse1) && peutTirer){
-            Tir();
-            GetComponent<Animator>().SetBool("bouleDeFeu", true);
-            Invoke("EnleverAnimationBouleDeFeu", 0.5f);
+       if(DeplacementPersonnage.jeuPause == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1) && peutTirer)
+            {
+                Tir();
+                GetComponent<Animator>().SetBool("bouleDeFeu", true);
+                Invoke("EnleverAnimationBouleDeFeu", 0.5f);
+            }
+            Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), epee.GetComponent<Collider>());
+            Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), personnage.GetComponent<Collider>());
         }
-        Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), epee.GetComponent<Collider>());
-        Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), personnage.GetComponent<Collider>());
     }
  
     void Tir(){
