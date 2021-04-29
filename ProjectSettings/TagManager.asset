@@ -13,6 +13,7 @@ TagManager:
   - Ennemi2
   - Ennemi3
   - Ennemi4
+  - personnage
   layers:
   - Default
   - TransparentFX

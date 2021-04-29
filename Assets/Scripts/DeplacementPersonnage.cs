@@ -27,6 +27,7 @@ public class DeplacementPersonnage : MonoBehaviour
     private bool auSol; // booléenne lorsque le personnage est au sol
     public bool epeeEnMain;
     private bool triggerEpee;
+    public bool saut;
     Rigidbody rigidbodyPersonnage; // Rigidbody du personnage
 
     // Ajout par Tamyla :
@@ -67,11 +68,11 @@ public class DeplacementPersonnage : MonoBehaviour
             }
 
             // Accélération du personnage lors de son déplacement avec la touche w
-            if (vitesseDeplacement <= 15f && Input.GetKey("w"))
+            if (vitesseDeplacement <= 15f && (Input.GetKey("w") || Input.GetKey("s")))
             {
                 vitesseDeplacement += 0.08f;
             }
-            else if (vitesseDeplacement >= 10 && Input.GetKey("w"))
+            else if (vitesseDeplacement >= 10 && (Input.GetKey("w") || Input.GetKey("s")))
             {
                 vitesseDeplacement = 15;
             }
@@ -93,10 +94,12 @@ public class DeplacementPersonnage : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && auSol)
             {
                 forceDuSaut = hauteurSaut;
+                saut = true;
+                Invoke("remettreTirBouleDeFeu", 1f);
             }
 
             // Si le clique droit est activé 
-            if (Input.GetKey(KeyCode.Mouse0) && epeeEnMain == true)
+            if (Input.GetKey(KeyCode.Mouse0) && epeeEnMain == true && saut == false)
             {
                 // Attaque avec l'épée
                 GetComponent<Animator>().SetBool("épée", true);
@@ -116,9 +119,9 @@ public class DeplacementPersonnage : MonoBehaviour
 
      void FixedUpdate(){
         if(auSol) {
-            GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
+            GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, 0f, ForceMode.VelocityChange);
         }else{
-            GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, rigidbodyPersonnage.velocity.y, ForceMode.VelocityChange);
+            GetComponent<Rigidbody>().AddRelativeForce(0f, ajoutGravite, 0f, ForceMode.VelocityChange);
         }
         forceDuSaut = 0f;
     }
@@ -166,6 +169,10 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void RetirerColliderEpee(){
         vraisEpee.GetComponent<Collider>().enabled = false;
+    }
+
+    void remettreTirBouleDeFeu(){
+        saut = false;
     }
 
     void RamasserEpee(){
