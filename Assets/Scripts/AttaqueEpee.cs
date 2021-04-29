@@ -17,25 +17,25 @@ public class AttaqueEpee : MonoBehaviour
             infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee();
             Vector3 direction = infoCollisions.transform.position - transform.position;
             direction.y = 0;
-            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); 
+            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse);  
         }
         if(infoCollisions.gameObject.tag == "Ennemi2"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee(); 
             Vector3 direction = infoCollisions.transform.position - transform.position;
             direction.y = 0;
-            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse);
+            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); 
         }
         if(infoCollisions.gameObject.tag == "Ennemi3"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee(); 
             Vector3 direction = infoCollisions.transform.position - transform.position;
             direction.y = 0;
-            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse);
+            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); 
         }
         if(infoCollisions.gameObject.tag == "Ennemi4"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee(); 
             Vector3 direction = infoCollisions.transform.position - transform.position;
             direction.y = 0;
-            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse);
+            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); 
         }
     }
 }

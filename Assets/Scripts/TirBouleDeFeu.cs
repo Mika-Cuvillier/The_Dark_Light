@@ -29,7 +29,7 @@ public class TirBouleDeFeu : MonoBehaviour
     void Update()
     {
         // Si on fait un clique gauche et qu'on peut tirer
-       if(DeplacementPersonnage.jeuPause == false)
+       if(DeplacementPersonnage.jeuPause == false && GetComponent<DeplacementPersonnage>().saut == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && peutTirer)
             {
