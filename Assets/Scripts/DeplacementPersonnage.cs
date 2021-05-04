@@ -16,6 +16,8 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject vraisEpee; // Variable contenant l'epee dans la main du perso Marc-Antoine Sicotte 2021-04-15
     public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageEpee; // Ajout par M-A
+    public GameObject png1; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
+    public GameObject dialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
     public Image barreVie; // Ajout par M-A
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
     private int nbObjetRamasser; // Nombre d'objet ramasser (cube) Marc-Antoine Sicotte 2021-04-13
@@ -46,7 +48,7 @@ public class DeplacementPersonnage : MonoBehaviour
     void Update()
     {
         // Si le jeu n'est pas en pause et que la caméra dialogue n'est pas activé
-       if((jeuPause == false && GestionCameras.dialogue == false))
+       if((jeuPause == false || GestionCameras.conversation == false))
         {
             float hDeplacement = Input.GetAxisRaw("Horizontal"); // déplacement horizontal
             float vDeplacement = Input.GetAxisRaw("Vertical"); // déplacement vertical
@@ -161,6 +163,25 @@ public class DeplacementPersonnage : MonoBehaviour
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
 
+    }
+
+
+    void OnTriggerEnter(Collider infoObjet) // Fonction qui permet l'affichage de la boite de dialogue quand le personnage est proche d'un PNG Marc-Antoine Sicotte 2021-05-04
+    {
+        if (infoObjet.gameObject.tag == "png1")
+        {
+            dialogue.SetActive(true);
+           GestionCameras.conversation = true;
+        }
+    }
+
+    void OnTriggerExit(Collider infoObjet)
+    {
+        if (infoObjet.gameObject.tag == "png1")
+        {
+            dialogue.SetActive(false);
+            GestionCameras.conversation = false;
+        }
     }
 
     void EnleverAnimationEpee(){

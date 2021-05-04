@@ -14,6 +14,7 @@ TagManager:
   - Ennemi3
   - Ennemi4
   - personnage
+  - stalagmite
   layers:
   - Default
   - TransparentFX

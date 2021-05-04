@@ -10,7 +10,7 @@ public class GestionCameras : MonoBehaviour
     
     public GameObject cam3emePersonne; // Game Object de la caméra 3e personne
     public GameObject camDialogue; // Game Object de la caméra dialogue
-    public static bool dialogue; // booléenne du dialogue
+    public static bool conversation; // booléenne du dialogue
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class GestionCameras : MonoBehaviour
     void Update()
     {
         // Si le dialogue est activé alors on change de caméra
-        if(dialogue){
+        if(conversation){
             cam3emePersonne.SetActive(false);
             camDialogue.SetActive(true);
         }else{
