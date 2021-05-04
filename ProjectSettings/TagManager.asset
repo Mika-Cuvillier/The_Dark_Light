@@ -15,6 +15,7 @@ TagManager:
   - Ennemi4
   - personnage
   - stalagmite
+  - png1
   layers:
   - Default
   - TransparentFX
