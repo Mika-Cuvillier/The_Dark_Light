@@ -16,6 +16,8 @@ TagManager:
   - personnage
   - stalagmite
   - png1
+  - TransitionGrotte
+  - "TransitionProph\xE9tie"
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class DeplacementPersonnage : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public bool epeeEnMain;
     private bool triggerEpee;
     public bool saut;
+    public bool luciole;
     Rigidbody rigidbodyPersonnage; // Rigidbody du personnage
 
     // Ajout par Tamyla :
@@ -161,6 +163,13 @@ public class DeplacementPersonnage : MonoBehaviour
         {
             barreVie.fillAmount -= 0.15f;
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
+        }
+
+        if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
+            SceneManager.LoadScene("Lagrotte");
+        }
+        if(infosCollision.gameObject.tag == "TransitionProphétie"){
+            SceneManager.LoadScene("LaProphetie");
         }
 
     }

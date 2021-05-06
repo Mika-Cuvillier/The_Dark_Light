@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Le_Naufrage.unity
     guid: 3227d33a3a4b6a54e8853064274a95e8
   - enabled: 1
+    path: Assets/Scenes/Lagrotte.unity
+    guid: 7a611e4ab38a02245a9835a0dd08609f
+  - enabled: 1
     path: Assets/Scenes/Finale_Victoire.unity
     guid: 69f9779bfb954ab429f8d1a771f11565
   - enabled: 1
