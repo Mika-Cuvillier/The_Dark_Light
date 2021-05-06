@@ -17,7 +17,7 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject vraisEpee; // Variable contenant l'epee dans la main du perso Marc-Antoine Sicotte 2021-04-15
     public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageEpee; // Ajout par M-A
-    public GameObject png1; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
+    public GameObject lucioleDebut; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
     public GameObject dialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
     public Image barreVie; // Ajout par M-A
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
@@ -181,6 +181,7 @@ public class DeplacementPersonnage : MonoBehaviour
         {
             dialogue.SetActive(true);
            GestionCameras.conversation = true;
+            Gestiondialogue.quiParle = 1;
         }
     }
 
