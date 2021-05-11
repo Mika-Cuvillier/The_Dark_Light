@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33824830127182218}
   - component: {fileID: 23228123202805532}
   m_Layer: 0
-  m_Name: chest_01_hinge LOD 003
+  m_Name: Coffre_Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 33503421124442250}
   - component: {fileID: 23244375160109540}
   m_Layer: 0
-  m_Name: chest_01_hinge LOD 2
+  m_Name: Coffre_Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 33040206642294044}
   - component: {fileID: 23458773846771030}
   m_Layer: 0
-  m_Name: chest_01_top LOD 2
+  m_Name: Coffre_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 33065187603922270}
   - component: {fileID: 23520860778758442}
   m_Layer: 0
-  m_Name: chest_01_bottom LOD 2
+  m_Name: Coffre_Bas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
