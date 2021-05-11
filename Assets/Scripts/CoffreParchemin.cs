@@ -7,7 +7,6 @@ public class CoffreParchemin : MonoBehaviour
     public GameObject topCoffre; // référence au dessus du coffre
     public GameObject interfaceParchemin;
     public GameObject leParchemin;
-    public GameObject gestionParchemin;
 
     // Canvas à enlever
     public GameObject interfaceCanvas;
@@ -32,6 +31,9 @@ public class CoffreParchemin : MonoBehaviour
         // Le coffre s'ouvre
         topCoffre.transform.Rotate(-180.0f, 0.0f, 0.0f);
 
+        //La musique joue
+        GetComponent<AudioSource>().Play();
+
         // Désactiver le personnage et les ennemis
         pause.GetComponent<GestionInterface>().ArretJeu();
 
@@ -43,8 +45,5 @@ public class CoffreParchemin : MonoBehaviour
 
         // Activer le canvas des parchemins
         interfaceParchemin.SetActive(true);
-
-        //Désactiver le gestion parchemin
-        gestionParchemin.SetActive(false);
     }
 }

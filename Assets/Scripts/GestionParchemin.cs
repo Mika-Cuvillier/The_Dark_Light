@@ -9,10 +9,9 @@ public class GestionParchemin : MonoBehaviour
     public GameObject interfaceParchemin; // Référence au canvas des parchemins
     public GameObject leParchemin; // Référence au parchemin désiré
     public GameObject topCoffre; // référence au dessus du coffre
-    public GameObject gestionParchemin;
 
     // Start is called before the first frame update
-    void Start()
+    public void GestionParcheminTest()
     {
         // Désactiver le personnage et les ennemis
         pause.GetComponent<GestionInterface>().RelancerJeu();
@@ -24,21 +23,14 @@ public class GestionParchemin : MonoBehaviour
         interfaceParchemin.SetActive(false);
 
         // Désactiver le parchemin désirée
-        // leParchemin.SetActive(false);
+        leParchemin.SetActive(false);
 
         //Refermer le coffre
         Invoke("RefermerLeCoffre", 2f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void RefermerLeCoffre()
     {
         topCoffre.transform.Rotate(180.0f, 0.0f, 0.0f);
-        gestionParchemin.SetActive(false);
     }
 }
