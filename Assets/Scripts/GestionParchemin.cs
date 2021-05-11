@@ -10,7 +10,6 @@ public class GestionParchemin : MonoBehaviour
     public GameObject leParchemin; // Référence au parchemin désiré
     public GameObject topCoffre; // référence au dessus du coffre
 
-    // Start is called before the first frame update
     public void GestionParcheminTest()
     {
         // Désactiver le personnage et les ennemis
