@@ -8,7 +8,7 @@ public class AttaqueEpee : MonoBehaviour
     /// PAR MIKA CUVILLIER
     /// ******************
 
-    private float forceKnockback =500;
+    private float forceKnockback =250;
 
     private void OnCollisionEnter(Collision infoCollisions)
     {
