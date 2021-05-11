@@ -584,7 +584,7 @@ MonoBehaviour:
   indicatifInventaire: {fileID: 180272079}
   hauteurSaut: 30
   ajoutGravite: -0.7
-  epeeEnMain: 1
+  epeeEnMain: 0
   saut: 0
   luciole: 0
   sonObjet: {fileID: 8300000, guid: 422a5ec95f061e84e905de374eb6a82f, type: 3}

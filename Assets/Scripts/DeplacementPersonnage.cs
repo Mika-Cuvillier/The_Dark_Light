@@ -46,6 +46,10 @@ public class DeplacementPersonnage : MonoBehaviour
         rigidbodyPersonnage = GetComponent<Rigidbody>();
         vraisEpee.GetComponent<Collider>().enabled = false;
         epeeEnMain = false;
+
+        if((SceneManager.GetActiveScene().name == "Lagrotte") || (SceneManager.GetActiveScene().name == "LaProphetie")){
+            epeeEnMain = true;
+        }
     }
 
     
