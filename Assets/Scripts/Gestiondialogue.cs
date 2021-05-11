@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Gestiondialogue : MonoBehaviour
 {
-    public Text dialogue;
-    public Text nom;
+    public GameObject discours;
+    public GameObject nom;
     public static int quiParle;
 
 
@@ -25,7 +25,7 @@ public class Gestiondialogue : MonoBehaviour
             if(quiParle == 1)
             {
                 nom.GetComponent<Text>().text = "Luciole";
-                dialogue.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite de cacher au village!";
+                discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite de cacher au village!";
             }
         }
     }
