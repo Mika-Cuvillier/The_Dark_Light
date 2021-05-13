@@ -18,6 +18,9 @@ TagManager:
   - png1
   - TransitionGrotte
   - "TransitionProph\xE9tie"
+  - png4
+  - png2
+  - png3
   layers:
   - Default
   - TransparentFX

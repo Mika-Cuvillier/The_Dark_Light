@@ -531,6 +531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: peasant_man
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 387d08699203a8d4eb993092f0aa519f,
+        type: 3}
+      propertyPath: m_TagString
+      value: png2
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 387d08699203a8d4eb993092f0aa519f,
         type: 3}
       propertyPath: m_Controller
@@ -659,6 +664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: peasant_girl
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4f4d7c062ae188b48aef3097b2b4dd5d,
+        type: 3}
+      propertyPath: m_TagString
+      value: png3
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 4f4d7c062ae188b48aef3097b2b4dd5d,
         type: 3}
@@ -15805,7 +15815,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8a7e612463125d84eaaf01d502916b83,
         type: 3}
       propertyPath: m_TagString
-      value: png1
+      value: png4
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 8a7e612463125d84eaaf01d502916b83,
         type: 3}
