@@ -18,8 +18,8 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageEpee; // Ajout par M-A
     public GameObject lucioleDebut; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
-    public GameObject dialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
-    public GameObject parole; // GameObject du discours du PNG Marc-Antoine Sicotte 2021-05-11
+    public GameObject uiDialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
+    public GameObject discours; // GameObject du discours du PNG Marc-Antoine Sicotte 2021-05-11
     public GameObject nomPNG; // GameObject du nom du PNG Marc-Antoine Sicotte 2021-05-11
     public Image barreVie; // Ajout par M-A
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
@@ -46,8 +46,9 @@ public class DeplacementPersonnage : MonoBehaviour
         rigidbodyPersonnage = GetComponent<Rigidbody>();
         vraisEpee.GetComponent<Collider>().enabled = false;
         epeeEnMain = false;
+        
 
-        if((SceneManager.GetActiveScene().name == "Lagrotte") || (SceneManager.GetActiveScene().name == "LaProphetie")){
+        if ((SceneManager.GetActiveScene().name == "Lagrotte") || (SceneManager.GetActiveScene().name == "LaProphetie")){
             epeeEnMain = true;
         }
     }
@@ -185,9 +186,9 @@ public class DeplacementPersonnage : MonoBehaviour
     {
         if (infoObjet.gameObject.tag == "png1")
         {
-            parole.SetActive(true);
+            discours.SetActive(true);
             nomPNG.SetActive(true);
-            dialogue.SetActive(true);
+            uiDialogue.SetActive(true);
             GestionCameras.conversation = true;
             Gestiondialogue.quiParle += 1;
         }
@@ -197,9 +198,9 @@ public class DeplacementPersonnage : MonoBehaviour
     {
         if (infoObjet.gameObject.tag == "png1")
         {
-            parole.SetActive(false);
+            discours.SetActive(false);
             nomPNG.SetActive(false);
-            dialogue.SetActive(false);
+            uiDialogue.SetActive(false);
             GestionCameras.conversation = false;
         }
     }
