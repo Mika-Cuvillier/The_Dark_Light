@@ -14,6 +14,18 @@ public class CoffreParchemin : MonoBehaviour
     //Référence au bouton pause
     public GameObject pause; 
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+
     private void OnCollisionEnter(Collision infoCollisions)
     {
         // Le coffre s'ouvre
