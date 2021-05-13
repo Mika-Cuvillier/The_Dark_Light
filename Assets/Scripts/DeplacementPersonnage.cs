@@ -23,7 +23,8 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject nomPNG; // GameObject du nom du PNG Marc-Antoine Sicotte 2021-05-11
     public Image barreVie; // Ajout par M-A
     public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
-    private int nbObjetRamasser; // Nombre d'objet ramasser (cube) Marc-Antoine Sicotte 2021-04-13
+    private int nbObjetRamasser; // Nombre d'objet ramasser  Marc-Antoine Sicotte 2021-04-13
+    private int ordeDialogue; // Variable qui gère l'orde des dialogues Marc-Antoine Sicotte 2021-04-13
     float vitesseDeplacement; // Variable pour la vitesse de déplacement
     public float hauteurSaut; // Variable pour la hauteur du saut
     public float ajoutGravite; // Variable pour la gravité
@@ -184,25 +185,53 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void OnTriggerEnter(Collider infoObjet) // Fonction qui permet l'affichage de la boite de dialogue quand le personnage est proche d'un PNG Marc-Antoine Sicotte 2021-05-04
     {
-        if (infoObjet.gameObject.tag == "png1")
+        discours.SetActive(true);
+        nomPNG.SetActive(true);
+        uiDialogue.SetActive(true);
+        GestionCameras.conversation = true;
+        if ((infoObjet.gameObject.tag == "png1") && ( ordeDialogue == 0 ))
         {
-            discours.SetActive(true);
-            nomPNG.SetActive(true);
-            uiDialogue.SetActive(true);
-            GestionCameras.conversation = true;
-            Gestiondialogue.quiParle += 1;
+
+            nomPNG.GetComponent<Text>().text = "Luciole";
+            discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite de cacher au village!";
+            ordeDialogue += 1;
+
+        }
+        else if ((infoObjet.gameObject.tag == "png2") &&( ordeDialogue == 1))
+        {
+
+            nomPNG.GetComponent<Text>().text = "Villageois";
+            discours.GetComponent<Text>().text = "Tu n'es pas d'ici toi? Notre île est maudite, chaque nuit des monstres apparaient! Si tu veux nous aider va voir ma femme.";
+            ordeDialogue += 1;
+        }
+        else if ((infoObjet.gameObject.tag == "png3") && (ordeDialogue == 2))
+        {
+
+            nomPNG.GetComponent<Text>().text = "Villageoise";
+            discours.GetComponent<Text>().text = "Une nouvelle tête, mais quel miracle! Peut-être sauras tu levé cette malédiction. Pour commencer il faut apprendre à se battre va voir l'entraineur sur la coline.";
+            ordeDialogue += 1;
+        }
+        else if ((infoObjet.gameObject.tag == "png4") && (ordeDialogue == 3))
+        {
+
+            nomPNG.GetComponent<Text>().text = "Entraineur";
+            discours.GetComponent<Text>().text = "Jeune Combatant je vous attendais! Pour attaquer avec ton épé clique gauche avec la souris, pour la boule de feu clique droit. Essaye sur ce sac de sable. AHIIHAAA!";
+            ordeDialogue += 1;
+        }
+        else
+        {
+            nomPNG.GetComponent<Text>().text = "Inconnu";
+            discours.GetComponent<Text>().text = "Hmmm?";
+            
         }
     }
 
     void OnTriggerExit(Collider infoObjet)
     {
-        if (infoObjet.gameObject.tag == "png1")
-        {
-            discours.SetActive(false);
-            nomPNG.SetActive(false);
-            uiDialogue.SetActive(false);
-            GestionCameras.conversation = false;
-        }
+        GestionCameras.conversation = false;
+        discours.SetActive(false);
+        nomPNG.SetActive(false);
+        uiDialogue.SetActive(false);
     }
 
     void EnleverAnimationEpee(){
