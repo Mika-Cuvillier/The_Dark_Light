@@ -7,11 +7,9 @@ public class GestionParchemin : MonoBehaviour
     public GameObject pause; //Référence au bouton pause
     public GameObject interfaceCanvas; // Référence au canvas d'interface
     public GameObject interfaceParchemin; // Référence au canvas des parchemins
-    public GameObject leParchemin; // Référence au parchemin désiré
     public GameObject topCoffre; // référence au dessus du coffre
 
-    // Start is called before the first frame update
-    public void GestionParcheminTest()
+    public void RetourCoffre()
     {
         // Désactiver le personnage et les ennemis
         pause.GetComponent<GestionInterface>().RelancerJeu();
@@ -21,9 +19,6 @@ public class GestionParchemin : MonoBehaviour
 
         //Désactiver le canvas des parchemins
         interfaceParchemin.SetActive(false);
-
-        // Désactiver le parchemin désirée
-        leParchemin.SetActive(false);
 
         //Refermer le coffre
         Invoke("RefermerLeCoffre", 2f);
