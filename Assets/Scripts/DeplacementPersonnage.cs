@@ -17,13 +17,15 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject vraisEpee; // Variable contenant l'epee dans la main du perso Marc-Antoine Sicotte 2021-04-15
     public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageEpee; // Ajout par M-A
+    public GameObject imageLuciole; // Variable representante l'image de la luciole dans l'inventaire Marc-Antoine Sicotte 2021-05-17
     public GameObject lucioleDebut; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
     public GameObject uiDialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
     public GameObject discours; // GameObject du discours du PNG Marc-Antoine Sicotte 2021-05-11
     public GameObject nomPNG; // GameObject du nom du PNG Marc-Antoine Sicotte 2021-05-11
     public Image barreVie; // Ajout par M-A
-    public Text indicatifInventaire; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
-    private int nbObjetRamasser; // Nombre d'objet ramasser  Marc-Antoine Sicotte 2021-04-13
+    public Text nbLuciole; // Varibale affichant la quantité de luciole ramassée dans l'inventaire Marc-Antoine Sicotte 2021-05-17
+    public Text nbEpee; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
+    private int nbLucioleRamasse; // Variable qui compte le nombre de Luciole ramasser; 
     private int ordeDialogue; // Variable qui gère l'orde des dialogues Marc-Antoine Sicotte 2021-04-13
     float vitesseDeplacement; // Variable pour la vitesse de déplacement
     public float hauteurSaut; // Variable pour la hauteur du saut
@@ -172,6 +174,13 @@ public class DeplacementPersonnage : MonoBehaviour
             barreVie.fillAmount -= 0.15f;
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
+        if(infosCollision.gameObject.tag == "Luciole")
+        {
+            nbLucioleRamasse += 1;
+            nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
+            personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
+            personnage.GetComponent<AudioSource>().Play(); // Tamyla
+        }
 
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
             SceneManager.LoadScene("Lagrotte");
@@ -191,7 +200,9 @@ public class DeplacementPersonnage : MonoBehaviour
         GestionCameras.conversation = true;
         if ((infoObjet.gameObject.tag == "png1") && ( ordeDialogue == 0 ))
         {
-
+            nbLucioleRamasse += 1;
+            imageLuciole.SetActive(true);
+            nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
             nomPNG.GetComponent<Text>().text = "Luciole";
             discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite de cacher au village!";
             ordeDialogue += 1;
@@ -228,6 +239,7 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void OnTriggerExit(Collider infoObjet)
     {
+        lucioleDebut.SetActive(false);
         GestionCameras.conversation = false;
         discours.SetActive(false);
         nomPNG.SetActive(false);
@@ -248,8 +260,8 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void RamasserEpee(){
         if(Input.GetKey(KeyCode.E) && triggerEpee == true){ 
-                nbObjetRamasser += 1;
-                indicatifInventaire.text += nbObjetRamasser;
+                
+                nbEpee.GetComponent<Text>().text = "1";
                 imageEpee.SetActive(true);
                 epee.SetActive(false);
                 personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
