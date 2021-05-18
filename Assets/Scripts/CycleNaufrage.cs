@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JourNuitCycle : MonoBehaviour
+public class CycleNaufrage : MonoBehaviour
 {
     /// ************************
     /// PAR TAMYLA AIT-CHELLOUCHE
     /// *************************
-    /// SCRIPT DE BASE POUR GESTION DU CYCLE JOUR NUIT
-    
+
     // SKYBOX
-    public Material CielJour;
     public Material CielNuit;
     public Material CielDemiJour;
 
     // LUMIÈRES
-    public GameObject LumieresJour;
     public GameObject LumieresNuit;
     public GameObject LumieresTwilight;
 
@@ -26,25 +23,8 @@ public class JourNuitCycle : MonoBehaviour
 
     void Start()
     {
-        // On commence le jeu le jour
-        Invoke("AmbianceJour", 0.1f);
-    }
-
-    void AmbianceJour ()
-    {
-        // On active les différentes lumières relié aux jour et on change le skybox du jeu
-        RenderSettings.skybox = CielJour;
-        LumieresJour.SetActive(true);
-
-        //On désactive les lumières de nuits
-        LumieresNuit.SetActive(false);
-
-        // Changement de l'AudioClip pour la musique de jour
-        MusiqueOn.GetComponent<AudioSource>().clip = jourMusique;
-        MusiqueOn.GetComponent<AudioSource>().Play();
-
-        // Appel de la fonction pour activer le cycle du crépuscule
-        Invoke("AmbianceTwilight", 30f);
+        // On commence le jeu au crépuscule
+        Invoke("AmbianceTwilight", 0.1f);
     }
 
     // 
@@ -54,14 +34,15 @@ public class JourNuitCycle : MonoBehaviour
         RenderSettings.skybox = CielDemiJour;
         LumieresTwilight.SetActive(true);
 
-        // On désactive les lumières de jours
-        LumieresJour.SetActive(false);
+        // Changement de l'AudioClip pour la musique de nuit
+        MusiqueOn.GetComponent<AudioSource>().clip = jourMusique;
+        MusiqueOn.GetComponent<AudioSource>().Play();
 
         // Appel de la fonction pour activer le cycle de la nuit
-        Invoke("AmbianceNuit", 20f);
+        Invoke("AmbianceNuit", 30f);
     }
 
-    void AmbianceNuit ()
+    void AmbianceNuit()
     {
         // On active les différentes lumières de nuit et on change le skybox du jeu
         RenderSettings.skybox = CielNuit;
@@ -74,8 +55,6 @@ public class JourNuitCycle : MonoBehaviour
         MusiqueOn.GetComponent<AudioSource>().clip = nuitMusique;
         MusiqueOn.GetComponent<AudioSource>().Play();
 
-        // Appel de la fonction pour activer le cycle du jour
-        Invoke("AmbianceJour", 150f);
     }
 
 }
