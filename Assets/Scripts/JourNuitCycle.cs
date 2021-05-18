@@ -7,9 +7,7 @@ public class JourNuitCycle : MonoBehaviour
     /// ************************
     /// PAR TAMYLA AIT-CHELLOUCHE
     /// *************************
-    /// Il va falloir modifier les invoke lors que les checkpoints seront programmés
-    ///
-
+    
     // SKYBOX
     public Material CielJour;
     public Material CielNuit;

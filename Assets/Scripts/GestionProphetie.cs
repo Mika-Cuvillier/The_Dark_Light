@@ -2,30 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GestionParchemin : MonoBehaviour
+public class GestionProphetie : MonoBehaviour
 {
     /// ************************
     /// PAR TAMYLA AIT-CHELLOUCHE
     /// *************************
- 
+    
+    public GameObject interfaceProphetie; // Référence au canvas des parchemins
     public GameObject pause; //Référence au bouton pause
     public GameObject interfaceCanvas; // Référence au canvas d'interface
-    public GameObject interfaceParchemin; // Référence au canvas des parchemins
     public GameObject topCoffre; // référence au dessus du coffre
 
-    public void RetourCoffre()
+
+    public void DesactiverProphetie()
     {
+        //Activer Canvas de la prophetie
+        interfaceProphetie.SetActive(false);
+
         // Réactiver le personnage et les ennemis
         pause.GetComponent<GestionInterface>().RelancerJeu();
 
         //Activer le canvas d'interface
         interfaceCanvas.SetActive(true);
 
-        //Désactiver le canvas des parchemins
-        interfaceParchemin.SetActive(false);
-
         //Refermer le coffre
         Invoke("RefermerLeCoffre", 2f);
+
     }
 
     void RefermerLeCoffre()

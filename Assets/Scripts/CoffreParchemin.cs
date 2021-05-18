@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CoffreParchemin : MonoBehaviour
 {
+    /// ************************
+    /// PAR TAMYLA AIT-CHELLOUCHE
+    /// *************************
+    
     public GameObject topCoffre; // référence au dessus du coffre
     public GameObject interfaceParchemin;
 
