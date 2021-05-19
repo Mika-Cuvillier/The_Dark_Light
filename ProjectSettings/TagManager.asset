@@ -21,6 +21,7 @@ TagManager:
   - png4
   - png2
   - png3
+  - Luciole
   layers:
   - Default
   - TransparentFX
