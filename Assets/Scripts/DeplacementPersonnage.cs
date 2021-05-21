@@ -198,7 +198,7 @@ public class DeplacementPersonnage : MonoBehaviour
         nomPNG.SetActive(true);
         uiDialogue.SetActive(true);
         GestionCameras.conversation = true;
-        if ((infoObjet.gameObject.tag == "png1") && ( ordeDialogue == 0 ))
+        if (infoObjet.gameObject.tag == "png1")
         {
             nbLucioleRamasse += 1;
             imageLuciole.SetActive(true);
@@ -206,28 +206,52 @@ public class DeplacementPersonnage : MonoBehaviour
             nomPNG.GetComponent<Text>().text = "Luciole";
             discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite de cacher au village!";
             ordeDialogue += 1;
+            print(ordeDialogue);
 
         }
-        else if ((infoObjet.gameObject.tag == "png2") &&( ordeDialogue == 1))
+        else if (infoObjet.gameObject.tag == "png2")
         {
+            if(ordeDialogue != 1)
+            {
+                nomPNG.GetComponent<Text>().text = "Villageois";
+                discours.GetComponent<Text>().text = "Ces démons nous cause des soucis à chaque jour et il faut être à l’affut à chaque instant!";
+            }
+            if(ordeDialogue == 1)
+            {
+                nomPNG.GetComponent<Text>().text = "Villageois";
+                discours.GetComponent<Text>().text = "Tu n'es pas d'ici toi. Notre île est maudite, chaque nuit des monstres apparaient! Si tu veux nous aider va voir ma femme.";
+                ordeDialogue += 1;
+                
+            }
 
-            nomPNG.GetComponent<Text>().text = "Villageois";
-            discours.GetComponent<Text>().text = "Tu n'es pas d'ici toi? Notre île est maudite, chaque nuit des monstres apparaient! Si tu veux nous aider va voir ma femme.";
-            ordeDialogue += 1;
         }
-        else if ((infoObjet.gameObject.tag == "png3") && (ordeDialogue == 2))
+        else if (infoObjet.gameObject.tag == "png3")
         {
-
-            nomPNG.GetComponent<Text>().text = "Villageoise";
-            discours.GetComponent<Text>().text = "Une nouvelle tête, mais quel miracle! Peut-être sauras tu levé cette malédiction. Pour commencer il faut apprendre à se battre va voir l'entraineur sur la coline.";
-            ordeDialogue += 1;
+            if(ordeDialogue !=2 )
+            {
+                nomPNG.GetComponent<Text>().text = "Villagoisee";
+                discours.GetComponent<Text>().text = "Nom d’une carpe! La récolte à encore baissé cette saison, ces satanés démons ne s’arrêteront donc jamais...";
+            }
+            if(ordeDialogue ==2)
+            {
+                 nomPNG.GetComponent<Text>().text = "Villagoisee";
+                discours.GetComponent<Text>().text = "Une nouvelle tête, mais quel miracle! Peut-être sauras tu levé cette malédiction. Pour commencer il faut apprendre à se battre va voir l'entraineur sur la coline.";
+                ordeDialogue += 1;
+            }
         }
-        else if ((infoObjet.gameObject.tag == "png4") && (ordeDialogue == 3))
+        else if (infoObjet.gameObject.tag == "png4")
         {
-
-            nomPNG.GetComponent<Text>().text = "Entraineur";
-            discours.GetComponent<Text>().text = "Jeune Combatant je vous attendais! Pour attaquer avec ton épé clique gauche avec la souris, pour la boule de feu clique droit. Essaye sur ce sac de sable. AHIIHAAA!";
-            ordeDialogue += 1;
+            if(ordeDialogue != 3)
+            {
+               nomPNG.GetComponent<Text>().text = "Entraineur";
+                discours.GetComponent<Text>().text = " J’ai envie d’une bonne marmite remplit de soupe au poulet pas toi!";
+            }
+           if(ordeDialogue == 3)
+            {
+                nomPNG.GetComponent<Text>().text = "Entraineur";
+                discours.GetComponent<Text>().text = "Jeune Combatant je vous attendais! Pour attaquer avec ton épé clique gauche avec la souris, pour la boule de feu clique droit. Essaye sur ce sac de sable. AHIIHAAA!";
+                ordeDialogue += 1;
+            }
         }
         else
         {
