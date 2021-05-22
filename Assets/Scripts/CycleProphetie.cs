@@ -43,7 +43,7 @@ public class CycleProphetie : MonoBehaviour
         MusiqueOn.GetComponent<AudioSource>().Play();
 
         // Appel de la fonction pour activer le cycle du crépuscule
-        Invoke("AmbianceTwilight", 100f);
+        Invoke("AmbianceTwilight", 50f);
     }
 
     // 
