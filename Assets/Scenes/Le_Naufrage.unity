@@ -13434,6 +13434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036270672}
   - component: {fileID: 1036270674}
+  - component: {fileID: 1036270673}
   m_Layer: 0
   m_Name: Lumieres
   m_TagString: Untagged
@@ -13458,7 +13459,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1036270674
+--- !u!114 &1036270673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13466,6 +13467,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036270671}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d43d7d07bd0fa45a1c16ae2a1bf04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CielNuit: {fileID: 2100000, guid: 7e1e5781d39549148abcbf66c428df00, type: 2}
+  CielDemiJour: {fileID: 2100000, guid: cf09bdd74268f184498d51e302193dbf, type: 2}
+  LumieresNuit: {fileID: 761389840}
+  LumieresTwilight: {fileID: 290108023}
+  MusiqueOn: {fileID: 1726044068}
+  jourMusique: {fileID: 8300000, guid: c82aca7a47f8da94d9febfd09cbe9367, type: 3}
+  nuitMusique: {fileID: 8300000, guid: 8de0a51e6e2b0b94b8a4a37a8a2b788f, type: 3}
+--- !u!114 &1036270674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036270671}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47d7128a93155314da977023586925a1, type: 3}
   m_Name: 
@@ -22858,7 +22878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1725880961
 Transform:
   m_ObjectHideFlags: 0
