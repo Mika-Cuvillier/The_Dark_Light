@@ -18,6 +18,9 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject epee; // Objet a ramasser pour tester l'inventaire Marc-Antoine Sicotte 2021-03-30
     public GameObject imageEpee; // Ajout par M-A
     public GameObject imageLuciole; // Variable representante l'image de la luciole dans l'inventaire Marc-Antoine Sicotte 2021-05-17
+    public GameObject luciole2; // GameObject Luciole à ramasser Marc-Antoine Sicotte 2021-05-21
+    public GameObject luciole3; // GameObject Luciole à ramasser Marc-Antoine Sicotte 2021-05-21
+    public GameObject luciole4; // GameObject Luciole à ramasser Marc-Antoine Sicotte 2021-05-21
     public GameObject lucioleDebut; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
     public GameObject uiDialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
     public GameObject discours; // GameObject du discours du PNG Marc-Antoine Sicotte 2021-05-11
@@ -33,6 +36,7 @@ public class DeplacementPersonnage : MonoBehaviour
     private float forceDuSaut; // Variable pour la force du saut
     public static bool jeuPause; // Variable Static pour permettre d'arrêter la détection des touches quand le jeu est en pause Marc-Antoine Sicotte 2021-03-24
     private bool auSol; // booléenne lorsque le personnage est au sol
+    public bool quete1Bool;
     public bool epeeEnMain;
     private bool triggerEpee;
     public bool saut;
@@ -124,6 +128,17 @@ public class DeplacementPersonnage : MonoBehaviour
                 Invoke("RetirerColliderEpee", 1f);
             }
 
+            if(quete1Bool == true)
+            {
+                Invoke("quete1", 15f);
+                quete1Bool = false;
+            }
+
+            if(nbLucioleRamasse >= 4)
+            {
+                luciole = true;
+            }
+
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
 
             barreVie.fillAmount += 0.00001f;
@@ -174,12 +189,29 @@ public class DeplacementPersonnage : MonoBehaviour
             barreVie.fillAmount -= 0.15f;
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
-        if(infosCollision.gameObject.tag == "Luciole")
+        if(infosCollision.gameObject.tag == "Luciole2")
         {
             nbLucioleRamasse += 1;
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
             personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
             personnage.GetComponent<AudioSource>().Play(); // Tamyla
+            luciole2.SetActive(false);
+        }
+        if(infosCollision.gameObject.tag == "Luciole3")
+        {
+            nbLucioleRamasse += 1;
+            nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
+            personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
+            personnage.GetComponent<AudioSource>().Play(); // Tamyla
+            luciole4.SetActive(false);
+        }
+        if(infosCollision.gameObject.tag == "Luciole4")
+        {
+            nbLucioleRamasse += 1;
+            nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
+            personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
+            personnage.GetComponent<AudioSource>().Play(); // Tamyla
+            luciole3.SetActive(false);
         }
 
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
@@ -245,12 +277,14 @@ public class DeplacementPersonnage : MonoBehaviour
             {
                nomPNG.GetComponent<Text>().text = "Entraineur";
                 discours.GetComponent<Text>().text = " J’ai envie d’une bonne marmite remplit de soupe au poulet pas toi!";
+                
             }
            if(ordeDialogue == 3)
             {
                 nomPNG.GetComponent<Text>().text = "Entraineur";
                 discours.GetComponent<Text>().text = "Jeune Combatant je vous attendais! Pour attaquer avec ton épé clique gauche avec la souris, pour la boule de feu clique droit. Essaye sur ce sac de sable. AHIIHAAA!";
                 ordeDialogue += 1;
+                quete1Bool = true;
             }
         }
         else
@@ -276,6 +310,25 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void RetirerColliderEpee(){
         vraisEpee.GetComponent<Collider>().enabled = false;
+    }
+
+    void quete1(){
+        discours.SetActive(true);
+        nomPNG.SetActive(true);
+        uiDialogue.SetActive(true);
+        GestionCameras.conversation = true;
+        nomPNG.GetComponent<Text>().text = "Luciole";
+        discours.GetComponent<Text>().text = "Hey! Je crois que la grotte mène à l'autre côté de l'ile, parcontre elle est très sombre. Essaye de ramasser 3 autres Luciole comme moi nous t'éclairons lors de la traversé!";
+        Invoke("finQuete1", 8f);
+        
+    }
+
+    void finQuete1(){
+        
+        GestionCameras.conversation = false;
+        discours.SetActive(false);
+        nomPNG.SetActive(false);
+        uiDialogue.SetActive(false);
     }
 
     void remettreTirBouleDeFeu(){

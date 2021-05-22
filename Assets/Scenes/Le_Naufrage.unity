@@ -10853,6 +10853,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.594
       objectReference: {fileID: 0}
+    - target: {fileID: -8658024091287701356, guid: fa6cb9296fda2694d9dabb6e8545d62b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Luciole2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_Name
@@ -10861,7 +10866,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_TagString
-      value: Luciole
+      value: Luciole2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa6cb9296fda2694d9dabb6e8545d62b, type: 3}
@@ -10891,7 +10896,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749288822}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -15555,17 +15560,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 427.66
+      value: 427.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 113.05
+      value: 109.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 705.24
+      value: 705.32
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
@@ -15602,6 +15607,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.594
       objectReference: {fileID: 0}
+    - target: {fileID: -8658024091287701356, guid: fa6cb9296fda2694d9dabb6e8545d62b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Luciole4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_Name
@@ -15610,7 +15620,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_TagString
-      value: Luciole
+      value: Luciole4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa6cb9296fda2694d9dabb6e8545d62b, type: 3}
@@ -15642,10 +15652,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.96507436
+  m_Height: 1.9301487
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.46507436, y: -4.4474707e-10, z: 0.000000105798556}
 --- !u!136 &1294854182
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23234,17 +23244,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 464.31
+      value: 476.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 109.94
+      value: 106.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 419.61
+      value: 418.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
@@ -23281,6 +23291,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.594
       objectReference: {fileID: 0}
+    - target: {fileID: -8658024091287701356, guid: fa6cb9296fda2694d9dabb6e8545d62b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Luciole3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_Name
@@ -23289,7 +23304,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
         type: 3}
       propertyPath: m_TagString
-      value: Luciole
+      value: Luciole3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa6cb9296fda2694d9dabb6e8545d62b, type: 3}
@@ -34537,6 +34552,9 @@ MonoBehaviour:
   epee: {fileID: 844854517}
   imageEpee: {fileID: 1053990557}
   imageLuciole: {fileID: 258252117}
+  luciole2: {fileID: 749288822}
+  luciole3: {fileID: 1727377131}
+  luciole4: {fileID: 1294854178}
   lucioleDebut: {fileID: 1991676460}
   uiDialogue: {fileID: 654422462}
   discours: {fileID: 648360246}
@@ -34546,6 +34564,7 @@ MonoBehaviour:
   nbEpee: {fileID: 1573813625}
   hauteurSaut: 30
   ajoutGravite: -0.7
+  quete1Bool: 0
   epeeEnMain: 0
   saut: 0
   luciole: 0
