@@ -24,6 +24,12 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject lucioleDebut; // GameObject qui réfère au premier png que le héro rencontre Marc-Antoine Sicotte 2021-05-04
     public GameObject uiDialogue; // GameObject de la boite de dialogue Marc-Antoine Sicotte 2021-05-04
     public GameObject discours; // GameObject du discours du PNG Marc-Antoine Sicotte 2021-05-11
+    public GameObject prophetie1; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
+    public GameObject prophetie2; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
+    public GameObject prophetie3; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
+    public GameObject prophetie4; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
+    public GameObject prophetie5; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
+    public GameObject prophetie6; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
     public GameObject nomPNG; // GameObject du nom du PNG Marc-Antoine Sicotte 2021-05-11
     public Image barreVie; // Ajout par M-A
     public Text nbLuciole; // Varibale affichant la quantité de luciole ramassée dans l'inventaire Marc-Antoine Sicotte 2021-05-17

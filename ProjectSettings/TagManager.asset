@@ -24,6 +24,12 @@ TagManager:
   - Luciole2
   - Luciole3
   - Luciole4
+  - Soleile
+  - CFluciole
+  - Palmier
+  - Arbre
+  - Epee
+  - cfEnnemi
   layers:
   - Default
   - TransparentFX
