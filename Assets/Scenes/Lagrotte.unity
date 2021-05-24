@@ -563,7 +563,7 @@ MonoBehaviour:
   prophetie6: {fileID: 0}
   nomPNG: {fileID: 306667703}
   barreVie: {fileID: 32549677}
-  nbLuciole: {fileID: 0}
+  nbLuciole: {fileID: 1349128589}
   nbEpee: {fileID: 901356621}
   hauteurSaut: 30
   ajoutGravite: -0.7
@@ -588,7 +588,7 @@ MonoBehaviour:
   bouleDeFeu: {fileID: 1505326198}
   personnage: {fileID: 80672623}
   epee: {fileID: 1181678416}
-  jaugeFeu: {fileID: 0}
+  jaugeFeu: {fileID: 943325424}
   vitesseBouleDeFeu: 20
 --- !u!82 &80672631
 AudioSource:
@@ -12153,7 +12153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melodie: {fileID: 8300000, guid: c82aca7a47f8da94d9febfd09cbe9367, type: 3}
-  Audio: {fileID: 0}
+  Audio: {fileID: 781080319}
 --- !u!114 &732438255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15153,7 +15153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26432c0b6a6edb24dbf1c4ddda3a2ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lePerso: {fileID: 0}
+  lePerso: {fileID: 80672623}
 --- !u!114 &1772300466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15521,7 +15521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26432c0b6a6edb24dbf1c4ddda3a2ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lePerso: {fileID: 0}
+  lePerso: {fileID: 80672623}
 --- !u!114 &1969807545
 MonoBehaviour:
   m_ObjectHideFlags: 0
