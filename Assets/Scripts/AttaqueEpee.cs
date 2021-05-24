@@ -50,5 +50,12 @@ public class AttaqueEpee : MonoBehaviour
             direction.y = 0;
             infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); 
         }
+        if(infoCollisions.gameObject.tag == "Boss"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee(); 
+            infoCollisions.gameObject.GetComponent<AudioSource>().PlayOneShot(sonKnockback, 2f);
+            Vector3 direction = infoCollisions.transform.position - transform.parent.position;
+            direction.y = 0;
+            infoCollisions.gameObject.GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); 
+        }
     }
 }

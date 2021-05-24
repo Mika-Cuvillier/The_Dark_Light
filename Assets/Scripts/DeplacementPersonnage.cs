@@ -196,6 +196,13 @@ public class DeplacementPersonnage : MonoBehaviour
             barreVie.fillAmount -= 0.15f;
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
+
+        if(infosCollision.gameObject.tag == "Boss")
+        {
+            barreVie.fillAmount -= 0.35f;
+            infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
+        }
+
         if(infosCollision.gameObject.tag == "Luciole2")
         {
             nbLucioleRamasse += 1;

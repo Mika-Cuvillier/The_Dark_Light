@@ -33,6 +33,9 @@ public class BouleDeFeu : MonoBehaviour
         if(infoCollisions.gameObject.tag == "Ennemi4"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
         }
+        if(infoCollisions.gameObject.tag == "Boss"){ 
+            infoCollisions.gameObject.GetComponent<Ennemis>().ToucheBouleDeFeu(); 
+        }
         Destroy(gameObject);
     }
 
