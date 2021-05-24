@@ -204,6 +204,19 @@ public class DeplacementPersonnage : MonoBehaviour
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
 
+       if(infosCollision.gameObject.tag == "Soleile")
+       {
+           prophetie1.SetActive(true);
+       }
+       if(infosCollision.gameObject.tag == "cfEnnemi")
+       {
+           prophetie3.SetActive(true);
+       }
+       if(infosCollision.gameObject.tag == "CFluciole")
+       {
+           prophetie2.SetActive(true);
+       }
+
         if(infosCollision.gameObject.tag == "Luciole2")
         {
             nbLucioleRamasse += 1;

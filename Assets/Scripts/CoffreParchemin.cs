@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoffreParchemin : MonoBehaviour
 {
@@ -8,30 +9,27 @@ public class CoffreParchemin : MonoBehaviour
     /// PAR TAMYLA AIT-CHELLOUCHE
     /// *************************
     
-    public GameObject topCoffre; // référence au dessus du coffre
-    public GameObject interfaceParchemin;
+    public GameObject topCoffre; // rï¿½fï¿½rence au dessus du coffre
+    public GameObject interfaceUi; // reference au canvas d'interface du jeu
+    public GameObject btnFermer; // reference au bouton pour fermer le canvas;
 
-    // Canvas à enlever
-    public GameObject interfaceCanvas;
 
-    //Référence au bouton pause
-    public GameObject pause; 
+
+    
+    
 
     private void OnCollisionEnter(Collision infoCollisions)
     {
+
         // Le coffre s'ouvre
         topCoffre.transform.Rotate(-180.0f, 0.0f, 0.0f);
 
         //La musique joue
         GetComponent<AudioSource>().Play();
 
-        // Désactiver le personnage et les ennemis
-        pause.GetComponent<GestionInterface>().ArretJeu();
+        //le bouton apparait
+        btnFermer.SetActive(true);
 
-        // Désactiver le canvas d'interface
-        interfaceCanvas.SetActive(false);
-
-        // Activer le canvas des parchemins
-        interfaceParchemin.SetActive(true);
+      
     }
 }
