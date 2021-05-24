@@ -143,6 +143,7 @@ public class DeplacementPersonnage : MonoBehaviour
             if(nbLucioleRamasse >= 4)
             {
                 luciole = true;
+                SceneChangement.niveau = 2;
             }
 
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
@@ -230,9 +231,10 @@ public class DeplacementPersonnage : MonoBehaviour
         }
 
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
-            SceneManager.LoadScene("Lagrotte");
+            SceneManager.LoadScene("SceneChargement");
         }
         if(infosCollision.gameObject.tag == "TransitionProphétie"){
+            SceneChangement.niveau = 3;
             SceneManager.LoadScene("LaProphetie");
         }
 

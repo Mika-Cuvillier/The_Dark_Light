@@ -10,12 +10,12 @@ public class SceneChangement : MonoBehaviour
     /// XANDER VANEGAS BUSTAMANTE
     /// *************************
 
-    public static int niveau;
+    public static int niveau = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        niveau = 1;
+        
     }
 
     void Update()
@@ -25,11 +25,34 @@ public class SceneChangement : MonoBehaviour
       
       Invoke("NiveauNaufrage", 4.8f);
     }
+
+    if(niveau == 2)
+    {
+      
+      Invoke("NiveauGrotte", 4.8f);
+    }
+
+    if(niveau == 3)
+    {
+      
+      Invoke("NiveauProphetie", 4.8f);
+    }
+
 }
    
 
     void NiveauNaufrage()
     {
       SceneManager.LoadScene("Le_Naufrage");
+    }
+
+    void NiveauGrotte()
+    {
+      SceneManager.LoadScene("LaGrotte");
+    }
+
+    void NiveauProphetie()
+    {
+      SceneManager.LoadScene("Laprophetie");
     }
 }
