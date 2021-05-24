@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311617, g: 0.38073775, b: 0.35873485, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731164, g: 0.38073814, b: 0.3587351, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -548,11 +548,11 @@ MonoBehaviour:
   vraisEpee: {fileID: 1181678416}
   epee: {fileID: 0}
   imageEpee: {fileID: 1080802429}
-  imageLuciole: {fileID: 0}
-  luciole2: {fileID: 0}
+  imageLuciole: {fileID: 417913691}
+  luciole2: {fileID: 393208128}
   luciole3: {fileID: 0}
   luciole4: {fileID: 0}
-  lucioleDebut: {fileID: 0}
+  lucioleDebut: {fileID: 311101891}
   uiDialogue: {fileID: 906938345}
   discours: {fileID: 271440509}
   prophetie1: {fileID: 0}
@@ -568,7 +568,7 @@ MonoBehaviour:
   hauteurSaut: 30
   ajoutGravite: -0.7
   quete1Bool: 0
-  epeeEnMain: 0
+  epeeEnMain: 1
   saut: 0
   luciole: 0
   sonObjet: {fileID: 8300000, guid: 422a5ec95f061e84e905de374eb6a82f, type: 3}
@@ -1435,6 +1435,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.82, y: 0.65, z: 1}
   m_Center: {x: 0, y: 0.33, z: 0}
+--- !u!1 &311101891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
+    type: 3}
+  m_PrefabInstance: {fileID: 678441787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &325607072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1722,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &393208128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fa6cb9296fda2694d9dabb6e8545d62b,
+    type: 3}
+  m_PrefabInstance: {fileID: 516245981}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &403175017
 GameObject:
   m_ObjectHideFlags: 0
@@ -15022,7 +15034,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: dd0682cd55d7f8342b8026ebb1cfc4a5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0682cd55d7f8342b8026ebb1cfc4a5, type: 3}
