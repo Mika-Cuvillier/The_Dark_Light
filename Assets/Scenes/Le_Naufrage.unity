@@ -10935,7 +10935,7 @@ CapsuleCollider:
   m_Height: 1.4143744
   m_Direction: 1
   m_Center: {x: 0.20878208, y: -0.00095546077, z: -0.33138415}
---- !u!114 &749288827
+--- !u!114 &749288830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10947,7 +10947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe68c5a147c505e44a5eebe5574a237d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 2024264778}
+  hero: {fileID: 0}
 --- !u!1 &761389840
 GameObject:
   m_ObjectHideFlags: 0
@@ -11870,8 +11870,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21929698, y: 0.77542037, z: 1.5934563}
-  m_Center: {x: -0.045294147, y: -0.013165957, z: -0.23966675}
+  m_Size: {x: 0.5428544, y: 0.77542037, z: 1.5934563}
+  m_Center: {x: -0.20707278, y: -0.013165956, z: -0.23966675}
 --- !u!1 &866688278
 GameObject:
   m_ObjectHideFlags: 0
@@ -15889,7 +15889,7 @@ CapsuleCollider:
   m_Height: 1.4143744
   m_Direction: 1
   m_Center: {x: 0.20878208, y: -0.00095546077, z: -0.33138415}
---- !u!114 &1294854183
+--- !u!114 &1294854186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23586,7 +23586,7 @@ CapsuleCollider:
   m_Height: 1.4143744
   m_Direction: 1
   m_Center: {x: 0.20878208, y: -0.00095546077, z: -0.33138415}
---- !u!114 &1727377136
+--- !u!114 &1727377139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23598,7 +23598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe68c5a147c505e44a5eebe5574a237d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 2024264778}
+  hero: {fileID: 0}
 --- !u!1001 &1737105832
 PrefabInstance:
   m_ObjectHideFlags: 0

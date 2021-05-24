@@ -72,7 +72,6 @@ public class DeplacementPersonnage : MonoBehaviour
         // Si le jeu n'est pas en pause et que la caméra dialogue n'est pas activé
        if(jeuPause == false)
         {
-            
             float hDeplacement = Input.GetAxisRaw("Horizontal"); // déplacement horizontal
             float vDeplacement = Input.GetAxisRaw("Vertical"); // déplacement vertical
 
@@ -163,11 +162,12 @@ public class DeplacementPersonnage : MonoBehaviour
     }
 
     //******************************************************** DÉTECTTION COLLISION **************************************//
-    void OnColsiolinEnter(Collision infosCollision)
+    void OnCollisionEnter(Collision infosCollision)
     {
 
        if (infosCollision.gameObject.tag == "epee") // La collision pour ramasser l'épée parterre Marc-Antoine Sicotte 2021-04-15;
         {
+            print("ok");
            triggerEpee = true;
            InvokeRepeating("RamasserEpee", 0.1f, 0.1f);
         }
@@ -344,6 +344,7 @@ public class DeplacementPersonnage : MonoBehaviour
     }
 
     void RamasserEpee(){
+        //print("ok");
         if(Input.GetKey(KeyCode.E) && triggerEpee == true){ 
                 
                 nbEpee.GetComponent<Text>().text = "1";
