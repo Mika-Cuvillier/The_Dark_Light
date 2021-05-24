@@ -70,8 +70,9 @@ public class DeplacementPersonnage : MonoBehaviour
     void Update()
     {
         // Si le jeu n'est pas en pause et que la caméra dialogue n'est pas activé
-       if((jeuPause == false || GestionCameras.conversation == false))
+       if(jeuPause == false)
         {
+            
             float hDeplacement = Input.GetAxisRaw("Horizontal"); // déplacement horizontal
             float vDeplacement = Input.GetAxisRaw("Vertical"); // déplacement vertical
 
@@ -162,7 +163,7 @@ public class DeplacementPersonnage : MonoBehaviour
     }
 
     //******************************************************** DÉTECTTION COLLISION **************************************//
-    void OnCollisionEnter(Collision infosCollision)
+    void OnColsiolinEnter(Collision infosCollision)
     {
 
        if (infosCollision.gameObject.tag == "epee") // La collision pour ramasser l'épée parterre Marc-Antoine Sicotte 2021-04-15;
@@ -201,7 +202,7 @@ public class DeplacementPersonnage : MonoBehaviour
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
             personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
             personnage.GetComponent<AudioSource>().Play(); // Tamyla
-            luciole2.SetActive(false);
+            
         }
         if(infosCollision.gameObject.tag == "Luciole3")
         {
@@ -209,7 +210,8 @@ public class DeplacementPersonnage : MonoBehaviour
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
             personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
             personnage.GetComponent<AudioSource>().Play(); // Tamyla
-            luciole4.SetActive(false);
+            
+            
         }
         if(infosCollision.gameObject.tag == "Luciole4")
         {
@@ -217,7 +219,7 @@ public class DeplacementPersonnage : MonoBehaviour
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
             personnage.GetComponent<AudioSource>().clip = sonObjet; //Tamyla
             personnage.GetComponent<AudioSource>().Play(); // Tamyla
-            luciole3.SetActive(false);
+            
         }
 
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
@@ -242,7 +244,7 @@ public class DeplacementPersonnage : MonoBehaviour
             imageLuciole.SetActive(true);
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
             nomPNG.GetComponent<Text>().text = "Luciole";
-            discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite de cacher au village!";
+            discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite te cacher au village!";
             ordeDialogue += 1;
             print(ordeDialogue);
 
@@ -288,7 +290,7 @@ public class DeplacementPersonnage : MonoBehaviour
            if(ordeDialogue == 3)
             {
                 nomPNG.GetComponent<Text>().text = "Entraineur";
-                discours.GetComponent<Text>().text = "Jeune Combatant je vous attendais! Pour attaquer avec ton épé clique gauche avec la souris, pour la boule de feu clique droit. Essaye sur ce sac de sable. AHIIHAAA!";
+                discours.GetComponent<Text>().text = "Jeune Combatant je vous attendais! Pour attaquer avec ton épée clique gauche avec la souris, pour la boule de feu clique droit. Essaye sur ce sac de sable. AHIIHAAA!";
                 ordeDialogue += 1;
                 quete1Bool = true;
             }

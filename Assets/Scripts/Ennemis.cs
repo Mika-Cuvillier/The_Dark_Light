@@ -25,7 +25,7 @@ public class Ennemis : MonoBehaviour
     void Update()
     {
         // Si le dans le scripte de d�placement le jeu est sur pause
-        if(DeplacementPersonnage.jeuPause == true)
+        if(DeplacementPersonnage.jeuPause == true || GestionCameras.conversation == true)
         {
             GetComponent<NavMeshAgent>().enabled = false;
         }

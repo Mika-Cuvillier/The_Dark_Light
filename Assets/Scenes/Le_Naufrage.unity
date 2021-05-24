@@ -9625,7 +9625,6 @@ GameObject:
   - component: {fileID: 648360247}
   - component: {fileID: 648360249}
   - component: {fileID: 648360248}
-  - component: {fileID: 648360250}
   m_Layer: 5
   m_Name: dialogue
   m_TagString: Untagged
@@ -9694,18 +9693,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648360246}
   m_CullTransparentMesh: 1
---- !u!114 &648360250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648360246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20785da84e0061e468e38104a1eef5fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &650999486
 GameObject:
   m_ObjectHideFlags: 0
@@ -10948,6 +10935,19 @@ CapsuleCollider:
   m_Height: 1.4143744
   m_Direction: 1
   m_Center: {x: 0.20878208, y: -0.00095546077, z: -0.33138415}
+--- !u!114 &749288827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749288822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe68c5a147c505e44a5eebe5574a237d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 2024264778}
 --- !u!1 &761389840
 GameObject:
   m_ObjectHideFlags: 0
@@ -15889,6 +15889,19 @@ CapsuleCollider:
   m_Height: 1.4143744
   m_Direction: 1
   m_Center: {x: 0.20878208, y: -0.00095546077, z: -0.33138415}
+--- !u!114 &1294854183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294854178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe68c5a147c505e44a5eebe5574a237d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 2024264778}
 --- !u!1001 &1314223191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23573,6 +23586,19 @@ CapsuleCollider:
   m_Height: 1.4143744
   m_Direction: 1
   m_Center: {x: 0.20878208, y: -0.00095546077, z: -0.33138415}
+--- !u!114 &1727377136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727377131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe68c5a147c505e44a5eebe5574a237d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 2024264778}
 --- !u!1001 &1737105832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34777,6 +34803,12 @@ MonoBehaviour:
   lucioleDebut: {fileID: 1991676460}
   uiDialogue: {fileID: 654422462}
   discours: {fileID: 648360246}
+  prophetie1: {fileID: 0}
+  prophetie2: {fileID: 0}
+  prophetie3: {fileID: 0}
+  prophetie4: {fileID: 0}
+  prophetie5: {fileID: 0}
+  prophetie6: {fileID: 0}
   nomPNG: {fileID: 918203730}
   barreVie: {fileID: 41677480}
   nbLuciole: {fileID: 1281680529}
