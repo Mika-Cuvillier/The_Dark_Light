@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction.unity
     guid: 911f3ea97794946498a40bb110387031
   - enabled: 1
+    path: Assets/Scenes/SceneChargement.unity
+    guid: 67ed23237a2914445a9927885ed10a72
+  - enabled: 1
     path: Assets/Scenes/Le_Naufrage.unity
     guid: 3227d33a3a4b6a54e8853064274a95e8
   - enabled: 1

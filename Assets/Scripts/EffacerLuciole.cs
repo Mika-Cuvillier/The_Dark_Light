@@ -18,10 +18,11 @@ public class EffacerLuciole : MonoBehaviour
         
     }
 
-    void OnColsiolinEnter(Collision infosCollision)
+    void OnCollisionEnter(Collision infosCollision)
     {
         if(infosCollision.gameObject.tag =="hero")
         {
+            print("ok");
             Destroy(gameObject);
         }
     }

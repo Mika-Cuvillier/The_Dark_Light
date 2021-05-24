@@ -167,7 +167,7 @@ public class DeplacementPersonnage : MonoBehaviour
 
        if (infosCollision.gameObject.tag == "epee") // La collision pour ramasser l'épée parterre Marc-Antoine Sicotte 2021-04-15;
         {
-            print("ok");
+            
            triggerEpee = true;
            InvokeRepeating("RamasserEpee", 0.1f, 0.1f);
         }
@@ -253,7 +253,7 @@ public class DeplacementPersonnage : MonoBehaviour
             nomPNG.GetComponent<Text>().text = "Luciole";
             discours.GetComponent<Text>().text = "Bonsoir chère inconnu! Tu es sain et sauf on ne peu en dire autant de ton bateau... Ramasse ton épé et vas vite te cacher au village!";
             ordeDialogue += 1;
-            print(ordeDialogue);
+            
 
         }
         else if (infoObjet.gameObject.tag == "png2")
@@ -351,7 +351,7 @@ public class DeplacementPersonnage : MonoBehaviour
     }
 
     void RamasserEpee(){
-        //print("ok");
+
         if(Input.GetKey(KeyCode.E) && triggerEpee == true){ 
                 
                 nbEpee.GetComponent<Text>().text = "1";
