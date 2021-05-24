@@ -1117,7 +1117,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 852837165}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1954392265443040, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_Name
@@ -1129,19 +1129,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.63961
+      value: 685.64
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07999992
+      value: 100.14
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.642998
+      value: 488
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1203,9 +1203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e1a4539b8b8534294ab0a051869099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
+  pause: {fileID: 1144367131}
   interfaceCanvas: {fileID: 0}
-  interfaceParchemin: {fileID: 624248923}
+  interfaceParchemin: {fileID: 812288381}
   topCoffre: {fileID: 95955673}
 --- !u!114 &95955676
 MonoBehaviour:
@@ -1221,8 +1221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topCoffre: {fileID: 95955673}
   interfaceParchemin: {fileID: 624248923}
-  interfaceCanvas: {fileID: 0}
-  pause: {fileID: 0}
+  interfaceCanvas: {fileID: 812288381}
+  pause: {fileID: 1144367131}
 --- !u!82 &95955677
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4767,7 +4767,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624248923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -704.17}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1636752008}
@@ -4777,7 +4777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -282.97806, y: -87.59}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &624248925
@@ -6596,39 +6596,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1200723897}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &852837164
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 852837165}
-  m_Layer: 0
-  m_Name: Coffres
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &852837165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852837164}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.579998, y: -0.6000004, z: 95.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 95955672}
-  - {fileID: 1433468061}
-  - {fileID: 2086538157}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &858131542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10503,7 +10470,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 852837165}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1954392265443040, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_Name
@@ -10515,19 +10482,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2591896
+      value: 629.79
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07999992
+      value: 100.11
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.941513
+      value: 583.62
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10589,8 +10556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e1a4539b8b8534294ab0a051869099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: {fileID: 0}
-  interfaceCanvas: {fileID: 0}
+  pause: {fileID: 1144367131}
+  interfaceCanvas: {fileID: 812288381}
   interfaceParchemin: {fileID: 1618101073}
   topCoffre: {fileID: 1433468062}
 --- !u!114 &1433468065
@@ -10607,8 +10574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topCoffre: {fileID: 1433468062}
   interfaceParchemin: {fileID: 1618101073}
-  interfaceCanvas: {fileID: 0}
-  pause: {fileID: 0}
+  interfaceCanvas: {fileID: 812288381}
+  pause: {fileID: 1144367131}
 --- !u!82 &1433468066
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17695,7 +17662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723724718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -282.97806, y: -87.59, z: -704.1699}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 95955672}
@@ -20242,7 +20209,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 852837165}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1954392265443040, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_Name
@@ -20254,19 +20221,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.449913
+      value: 594.7
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07999992
+      value: 100.18
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 46.459404
+      value: 494.7
       objectReference: {fileID: 0}
     - target: {fileID: 4140551357517776, guid: 5c8ca0e010b536742b9bfabc2b939bd0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20329,8 +20296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interfaceProphetie: {fileID: 1271300768}
-  pause: {fileID: 0}
-  interfaceCanvas: {fileID: 0}
+  pause: {fileID: 1144367131}
+  interfaceCanvas: {fileID: 812288381}
   topCoffre: {fileID: 2086538158}
 --- !u!114 &2086538161
 MonoBehaviour:
@@ -20360,8 +20327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topCoffre: {fileID: 2086538158}
   interfaceParchemin: {fileID: 1882740237}
-  interfaceCanvas: {fileID: 0}
-  pause: {fileID: 0}
+  interfaceCanvas: {fileID: 812288381}
+  pause: {fileID: 1144367131}
 --- !u!82 &2086538163
 AudioSource:
   m_ObjectHideFlags: 0
