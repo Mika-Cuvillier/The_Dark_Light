@@ -6,15 +6,17 @@ public class CamDialogue : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// CamÃ©ra dialogue
+    /// Modifier: 25 mars 2021
     /// ******************
 
-    public GameObject laCible; // GameObject de la cible pour la caméra
-    public Vector3 distance; // distance entre la caméra et la cible
+    public GameObject laCible; // GameObject de la cible pour la camï¿½ra
+    public Vector3 distance; // distance entre la camï¿½ra et la cible
 
     // Update is called once per frame
     void Update()
     {
-        // transformation de la position de la caméra 
+        // transformation de la position de la camï¿½ra 
        transform.position = laCible.transform.position + distance;
     }
 }

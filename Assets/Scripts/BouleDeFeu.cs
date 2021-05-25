@@ -6,6 +6,8 @@ public class BouleDeFeu : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Gestion de la boule de feu
+    /// Modifier: 25 mai 2021
     /// ******************
    
     public GameObject bouleDeFeu; // Game Object � la boule de feu
@@ -38,7 +40,7 @@ public class BouleDeFeu : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
+    // Ignorer la collision entre la boule de feu et le personnage et l'ennemi
     void FixedUpdate(){
         Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), epee.GetComponent<Collider>());
         Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), personnage.GetComponent<Collider>());

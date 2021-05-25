@@ -6,6 +6,8 @@ public class AttaqueEpee : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Attaque à l'épée
+    /// Modifier: 25 mai 2021
     /// ******************
 
     private float forceKnockback =250;
@@ -17,7 +19,7 @@ public class AttaqueEpee : MonoBehaviour
 
     private void OnCollisionEnter(Collision infoCollisions)
     {
-        // Si l'�p�e entre en collision avec l'ennemi on appelle la fonction attaqueepee dans le scipt de l'ennemi
+        // Si l'�p�e entre en collision avec l'ennemi on appelle la fonction attaqueepee dans le scipt de l'ennemi et on fait un knockback
         if(infoCollisions.gameObject.tag == "Ennemi1"){ 
             infoCollisions.gameObject.GetComponent<Ennemis>().AttaqueEpee();
             infoCollisions.gameObject.GetComponent<AudioSource>().PlayOneShot(sonKnockback, 2f);

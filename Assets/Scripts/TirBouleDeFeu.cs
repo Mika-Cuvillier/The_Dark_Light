@@ -8,6 +8,8 @@ public class TirBouleDeFeu : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Tir de la boule de feu
+    /// Modifier: 24 avril 2021
     /// ******************
  
     public GameObject bouleDeFeu; // Game Object de la boule de feu
@@ -17,7 +19,6 @@ public class TirBouleDeFeu : MonoBehaviour
     public float vitesseBouleDeFeu; // la vitesse de la boule de feu
     private bool peutTirer; // booléeane si on peut tirer une nouvelle boule de feu
 
-    // Start is called before the first frame update
     void Start()
     {
         // Au départ, on peut tirer une boule de feu
@@ -25,10 +26,9 @@ public class TirBouleDeFeu : MonoBehaviour
         GetComponent<Animator>().SetBool("bouleDeFeu", false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Si on fait un clique gauche et qu'on peut tirer
+        // Si on fait un clique gauche et qu'on peut tirer et que le saut est false
        if(DeplacementPersonnage.jeuPause == false && GetComponent<DeplacementPersonnage>().saut == false)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1) && peutTirer)
@@ -41,7 +41,7 @@ public class TirBouleDeFeu : MonoBehaviour
             Physics.IgnoreCollision(bouleDeFeu.GetComponent<Collider>(), personnage.GetComponent<Collider>());
         }
     }
- 
+        // Le tir de la boule de feu
     void Tir(){
         jaugeFeu.fillAmount -= 1f; // Descend la jauge de feu au minimum apr�s avoir tirer Marc-Antoine Sicotte 2021-03-30
         peutTirer = false;
@@ -58,11 +58,11 @@ public class TirBouleDeFeu : MonoBehaviour
         jaugeFeu.fillAmount += 1f; // Remonte la jauge de feu au maximum apr�s avoir reactiver le tir Marc-Antoine Sicotte 2021-03-30
 
     }
-
+        // on enlève l'animation de la boule de feu
     void EnleverAnimationBouleDeFeu(){
         GetComponent<Animator>().SetBool("bouleDeFeu", false);
     }
-
+        // On crée une nouvelle boule de feu
     void NouvelleBouleDeFeu()
     {
         GameObject nouvelleBoule = Instantiate(bouleDeFeu, bouleDeFeu.transform.position, bouleDeFeu.transform.rotation);

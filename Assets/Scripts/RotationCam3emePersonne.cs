@@ -6,6 +6,8 @@ public class RotationCam3emePersonne : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Gestion caméra 3eme personne
+    /// Modifier: 5 mars 2021
     /// ******************
 
     public GameObject personnage; // Game Object du personnage
@@ -14,8 +16,8 @@ public class RotationCam3emePersonne : MonoBehaviour
     public float hauteurPivot; // la hauteur du pivot
     public float distanceCameraLoin = -5; // la distance de la cam�ra de loin
     public float distanceCameraPret = -2; // la distance de la cam�ra de proche
-    public float vitesseCameraX;
-    public float vitesseCameraY;
+    public float vitesseCameraX; // la vitesse de la caméra sur l'axe des x
+    public float vitesseCameraY; // la vitesse de la caméra sur l'axe des y
     public static bool jeuPause; // bool�enne si le jeu est sur pause
     
     

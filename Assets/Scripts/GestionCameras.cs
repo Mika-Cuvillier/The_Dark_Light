@@ -6,16 +6,18 @@ public class GestionCameras : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Gestion des camÃ©ras
+    /// Modifier: 30 mars 2021
     /// ******************
     
-    public GameObject cam3emePersonne; // Game Object de la caméra 3e personne
-    public GameObject camDialogue; // Game Object de la caméra dialogue
-    public static bool conversation; // booléenne du dialogue
+    public GameObject cam3emePersonne; // Game Object de la camï¿½ra 3e personne
+    public GameObject camDialogue; // Game Object de la camï¿½ra dialogue
+    public static bool conversation; // boolï¿½enne du dialogue
 
     // Start is called before the first frame update
     void Start()
     {
-        //Au début, la caméra 3e personne est activé
+        //Au dï¿½but, la camï¿½ra 3e personne est activï¿½
         cam3emePersonne.SetActive(true);
         camDialogue.SetActive(false);
     }
@@ -23,7 +25,7 @@ public class GestionCameras : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Si le dialogue est activé alors on change de caméra
+        // Si le dialogue est activï¿½ alors on change de camï¿½ra
         if(conversation){
             cam3emePersonne.SetActive(false);
             camDialogue.SetActive(true);

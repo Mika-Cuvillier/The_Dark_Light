@@ -8,9 +8,6 @@ public class GestionInterface : MonoBehaviour
     // Script pour mettre le jeu � l'arr�t Marc-Antoine Sicotte 2021-03-24
     public GameObject lePerso;
 
-    // Start is called before the first frame update
-
-
     public void ArretJeu() 
     {
         lePerso.GetComponent<Animator>().enabled = false;

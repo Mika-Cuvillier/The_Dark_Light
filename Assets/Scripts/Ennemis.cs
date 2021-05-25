@@ -7,24 +7,19 @@ public class Ennemis : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Gestion des ennemis
+    /// Modifier: 25 mai 2021
     /// ******************
 
     public float vie; // nombre de vie de l'ennemi
     public GameObject positionPerso; // r�f�rence au personnage
     public bool arret;
     public float vitesseKnockback;
-    /* private float forceKnockback =10; */
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        // Si le dans le scripte de d�placement le jeu est sur pause
+        // Si le dans le scripte de d�placement le jeu est sur pause ou que le dialogue est true
         if((DeplacementPersonnage.jeuPause == true) || (GestionCameras.conversation == true))
         {
             GetComponent<NavMeshAgent>().enabled = false;
@@ -72,10 +67,6 @@ public class Ennemis : MonoBehaviour
             gameObject.tag = "Untagged"; 
             GetComponent<Collider>().enabled = false; 
             Destroy(gameObject, 2f);
-            /* Vector3 direction = transform.position - transform.position;
-            direction.y = 0;
-            GetComponent<Rigidbody>().AddForce(direction.normalized * forceKnockback, ForceMode.Impulse); */
-
             // Ajouter par Tamyla
             GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
         }

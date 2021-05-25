@@ -12,12 +12,6 @@ public class SceneChangement : MonoBehaviour
 
     public static int niveau = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void Update()
 {
     if(niveau == 1)

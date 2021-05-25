@@ -7,6 +7,8 @@ public class GestionEnnemis : MonoBehaviour
 {
     /// ******************
     /// PAR MIKA CUVILLIER
+    /// Gestion des ennemis
+    /// Modifier: 1 avril 2021
     /// ******************
 
     public GameObject ChauveSouris; // R�f�rence � l'ennemi chauve souris
@@ -23,11 +25,6 @@ public class GestionEnnemis : MonoBehaviour
         InvokeRepeating("CreationFantomes", 2f, 25f);
         InvokeRepeating("CreationLapins", 2f, 15f);
         InvokeRepeating("CreationSlimes", 2f, 35f);
-    }
-
-    // Update is called once per frame
-    public void Update()
-    {
     }
 
     // Cr�ations des ennemis avec un Instantiate (copie)
