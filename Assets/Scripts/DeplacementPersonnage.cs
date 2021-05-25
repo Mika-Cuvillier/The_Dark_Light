@@ -9,6 +9,8 @@ public class DeplacementPersonnage : MonoBehaviour
 {
     /// ************************
     /// PAR MIKA CUVILLIER
+    /// Gestion du personnage
+    /// Modifier: 24 mai 2021
     /// *************************
 
     public GameObject camera3emePersonne; // Variable contenant la caméra 3e personne
@@ -43,9 +45,9 @@ public class DeplacementPersonnage : MonoBehaviour
     public static bool jeuPause; // Variable Static pour permettre d'arrêter la détection des touches quand le jeu est en pause Marc-Antoine Sicotte 2021-03-24
     private bool auSol; // booléenne lorsque le personnage est au sol
     public bool quete1Bool;
-    public bool epeeEnMain;
+    public bool epeeEnMain; // Variable pour savoir si on a l'épée en main
     private bool triggerEpee;
-    public bool saut;
+    public bool saut; // Variable pour savoir si le saut est true
     public bool luciole;
     Rigidbody rigidbodyPersonnage; // Rigidbody du personnage
 
@@ -60,7 +62,7 @@ public class DeplacementPersonnage : MonoBehaviour
         vraisEpee.GetComponent<Collider>().enabled = false;
         epeeEnMain = false;
         
-
+        // Si on est sur lagrotte ou la prophétie, on a déja l'épée en main
         if ((SceneManager.GetActiveScene().name == "Lagrotte") || (SceneManager.GetActiveScene().name == "LaProphetie")){
             epeeEnMain = true;
         }
@@ -152,7 +154,7 @@ public class DeplacementPersonnage : MonoBehaviour
         }
 
     }
-
+        // Le saut
      void FixedUpdate(){
         if(auSol) {
             GetComponent<Rigidbody>().AddRelativeForce(0f, forceDuSaut, 0f, ForceMode.VelocityChange);
@@ -252,7 +254,7 @@ public class DeplacementPersonnage : MonoBehaviour
             
         }
 
-
+            // Si on rentre en collision on change de scène
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
             SceneManager.LoadScene("SceneChangement");
         }
