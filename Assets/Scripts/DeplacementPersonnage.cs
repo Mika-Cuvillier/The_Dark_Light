@@ -204,20 +204,29 @@ public class DeplacementPersonnage : MonoBehaviour
             infosCollision.gameObject.GetComponent<Ennemis>().animationAttaque();
         }
 
-       if(infosCollision.gameObject.tag == "Soleile")
+       if(infosCollision.gameObject.tag == "Soleile") //marc
        {
            prophetie1.SetActive(true);
        }
-       if(infosCollision.gameObject.tag == "cfEnnemi")
+       if(infosCollision.gameObject.tag == "cfEnnemi") // marc
        {
            prophetie3.SetActive(true);
        }
-       if(infosCollision.gameObject.tag == "CFluciole")
+
+       if(infosCollision.gameObject.tag == "CFluciole") // marc
        {
            prophetie2.SetActive(true);
        }
 
-        if(infosCollision.gameObject.tag == "Luciole2")
+        if(infosCollision.gameObject.tag == "fingrotte") // marc
+       {
+           SceneChangement.niveau = 3;
+           SceneManager.LoadScene("SceneChangement");
+
+       }
+
+
+        if(infosCollision.gameObject.tag == "Luciole2") //Marc
         {
             nbLucioleRamasse += 1;
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
@@ -225,7 +234,7 @@ public class DeplacementPersonnage : MonoBehaviour
             personnage.GetComponent<AudioSource>().Play(); // Tamyla
             
         }
-        if(infosCollision.gameObject.tag == "Luciole3")
+        if(infosCollision.gameObject.tag == "Luciole3")// Marc
         {
             nbLucioleRamasse += 1;
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
@@ -234,7 +243,7 @@ public class DeplacementPersonnage : MonoBehaviour
             
             
         }
-        if(infosCollision.gameObject.tag == "Luciole4")
+        if(infosCollision.gameObject.tag == "Luciole4") // Marc
         {
             nbLucioleRamasse += 1;
             nbLuciole.GetComponent<Text>().text = nbLucioleRamasse.ToString();
@@ -243,12 +252,9 @@ public class DeplacementPersonnage : MonoBehaviour
             
         }
 
+
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
-            SceneManager.LoadScene("SceneChargement");
-        }
-        if(infosCollision.gameObject.tag == "TransitionProphétie"){
-            SceneChangement.niveau = 3;
-            SceneManager.LoadScene("LaProphetie");
+            SceneManager.LoadScene("SceneChangement");
         }
 
     }

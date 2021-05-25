@@ -53,6 +53,6 @@ public class SceneChangement : MonoBehaviour
 
     void NiveauProphetie()
     {
-      SceneManager.LoadScene("Laprophetie");
+      SceneManager.LoadScene("LaProphetie");
     }
 }

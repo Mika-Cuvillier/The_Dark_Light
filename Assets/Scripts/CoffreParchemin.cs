@@ -30,6 +30,11 @@ public class CoffreParchemin : MonoBehaviour
         //le bouton apparait
         btnFermer.SetActive(true);
 
+        //le canvas disparait
+        interfaceUi.SetActive(false);
+
+    
+
       
     }
 }
