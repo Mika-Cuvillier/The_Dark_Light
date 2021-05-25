@@ -32,6 +32,8 @@ TagManager:
   - cfEnnemi
   - Boss
   - fingrotte
+  - png5
+  - cfEpee
   layers:
   - Default
   - TransparentFX

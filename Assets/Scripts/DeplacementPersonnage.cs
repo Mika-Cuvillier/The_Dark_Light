@@ -32,17 +32,28 @@ public class DeplacementPersonnage : MonoBehaviour
     public GameObject prophetie4; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
     public GameObject prophetie5; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
     public GameObject prophetie6; // Gameobject qui relate aux morceaux de la prophetie Marc-Antoine Sicotte 2021-05-22
+    public GameObject canvasPro; // variable du canvas de la prophetie
     public GameObject nomPNG; // GameObject du nom du PNG Marc-Antoine Sicotte 2021-05-11
+    public GameObject escalier1; // GameObject des escalier dans la scene prophetie Marc-Antoine Sicotte 2021-05-21
+    public GameObject escalier2; // GameObject des escalier dans la scene prophetie Marc-Antoine Sicotte 2021-05-21
     public Image barreVie; // Ajout par M-A
+    public Text nbProphetie; // Indicatif du nombre de parchemin trouvé Marc-Antoine Sicotte 2021-05-24;
     public Text nbLuciole; // Varibale affichant la quantité de luciole ramassée dans l'inventaire Marc-Antoine Sicotte 2021-05-17
     public Text nbEpee; // Variable affichant la quantité des objets ramasser dans l'inventaire Marc-Antoine Sicotte 2021-04-13
-    private int nbLucioleRamasse; // Variable qui compte le nombre de Luciole ramasser; 
+    private int nbLucioleRamasse; // Variable qui compte le nombre de Luciole ramasser Marc-Antoine Sicotte 2021-05-24; 
+    private int nbProphetieRamasse; // Variable qui compte le nombre de parchemin ramasser Marc-Antoine Sicotte 2021-05-24
     private int ordeDialogue; // Variable qui gère l'orde des dialogues Marc-Antoine Sicotte 2021-04-13
     float vitesseDeplacement; // Variable pour la vitesse de déplacement
     public float hauteurSaut; // Variable pour la hauteur du saut
     public float ajoutGravite; // Variable pour la gravité
     private float forceDuSaut; // Variable pour la force du saut
     public static bool jeuPause; // Variable Static pour permettre d'arrêter la détection des touches quand le jeu est en pause Marc-Antoine Sicotte 2021-03-24
+    public bool pro1;
+    public bool pro2;
+    public bool pro3;
+    public bool pro4;
+    public bool pro5;
+    public bool pro6;
     private bool auSol; // booléenne lorsque le personnage est au sol
     public bool quete1Bool;
     public bool epeeEnMain; // Variable pour savoir si on a l'épée en main
@@ -148,6 +159,11 @@ public class DeplacementPersonnage : MonoBehaviour
                 SceneChangement.niveau = 2;
             }
 
+            if(pro1 == true && pro2 == true && pro3 == true && pro4 == true && pro5 == true && pro6 == true ){
+                escalier1.SetActive(true);
+                escalier2.SetActive(true);
+            }
+
             ////////////////////////// ZONE TESTE BARRE DE VIE /////////////
 
             barreVie.fillAmount += 0.00001f;
@@ -208,16 +224,55 @@ public class DeplacementPersonnage : MonoBehaviour
 
        if(infosCollision.gameObject.tag == "Soleile") //marc
        {
+           pro1 = true;
+           nbProphetieRamasse += 1;
            prophetie1.SetActive(true);
+           canvasPro.SetActive(true);
+           Invoke("enleverProphetie", 3f);
        }
        if(infosCollision.gameObject.tag == "cfEnnemi") // marc
        {
+           pro2 = true;
+           nbProphetieRamasse += 1;
            prophetie3.SetActive(true);
+           canvasPro.SetActive(true);
+           Invoke("enleverProphetie", 3f);
        }
 
        if(infosCollision.gameObject.tag == "CFluciole") // marc
        {
+           pro3 = true;
+           nbProphetieRamasse += 1;
            prophetie2.SetActive(true);
+           canvasPro.SetActive(true);
+           Invoke("enleverProphetie", 3f);
+           
+       }
+
+        if(infosCollision.gameObject.tag == "Arbre") //marc
+       {
+           pro4 = true;
+           nbProphetieRamasse += 1;
+           prophetie5.SetActive(true);
+           canvasPro.SetActive(true);
+           Invoke("enleverProphetie", 3f);
+       }
+       if(infosCollision.gameObject.tag == "cfEpee") // marc
+       {
+           pro5 = true;
+           nbProphetieRamasse += 1;
+           prophetie6.SetActive(true);
+           canvasPro.SetActive(true);
+           Invoke("enleverProphetie", 3f);
+       }
+
+       if(infosCollision.gameObject.tag == "Palmier") // marc
+       {
+           pro6 = true;
+           nbProphetieRamasse += 1;
+           prophetie4.SetActive(true);
+           canvasPro.SetActive(true);
+           Invoke("enleverProphetie", 3f);
        }
 
         if(infosCollision.gameObject.tag == "fingrotte") // marc
@@ -258,6 +313,8 @@ public class DeplacementPersonnage : MonoBehaviour
         if(luciole == true && infosCollision.gameObject.tag == "TransitionGrotte"){
             SceneManager.LoadScene("SceneChangement");
         }
+
+        nbProphetie.GetComponent<Text>().text = nbProphetieRamasse.ToString();
 
     }
 
@@ -325,6 +382,17 @@ public class DeplacementPersonnage : MonoBehaviour
                 quete1Bool = true;
             }
         }
+
+        else if (infoObjet.gameObject.tag == "png5")
+        {
+            
+          
+            
+                nomPNG.GetComponent<Text>().text = "Villageoise";
+                discours.GetComponent<Text>().text = "Vite vite vite allez au village! Les monstres nous ont envahi!";
+                
+            
+        }
         else
         {
             nomPNG.GetComponent<Text>().text = "Inconnu";
@@ -371,6 +439,11 @@ public class DeplacementPersonnage : MonoBehaviour
 
     void remettreTirBouleDeFeu(){
         saut = false;
+    }
+
+    void enleverProphetie()
+    {
+        canvasPro.SetActive(false);
     }
 
     void RamasserEpee(){

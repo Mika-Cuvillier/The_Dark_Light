@@ -11,7 +11,7 @@ public class CoffreParchemin : MonoBehaviour
     
     public GameObject topCoffre; // r�f�rence au dessus du coffre
     public GameObject interfaceUi; // reference au canvas d'interface du jeu
-    public GameObject btnFermer; // reference au bouton pour fermer le canvas;
+    
 
 
 
@@ -27,14 +27,20 @@ public class CoffreParchemin : MonoBehaviour
         //La musique joue
         GetComponent<AudioSource>().Play();
 
-        //le bouton apparait
-        btnFermer.SetActive(true);
+        
 
         //le canvas disparait
         interfaceUi.SetActive(false);
 
+        Invoke("afficherInterface", 3f);
+
     
 
       
+    }
+
+    void afficherInterface()
+    {
+        interfaceUi.SetActive(true);
     }
 }

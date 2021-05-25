@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Ennemis : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Ennemis : MonoBehaviour
     public float vie; // nombre de vie de l'ennemi
     public GameObject positionPerso; // r�f�rence au personnage
     public bool arret;
+    public bool finJeu;
     public float vitesseKnockback;
 
     // Update is called once per frame
@@ -39,13 +41,23 @@ public class Ennemis : MonoBehaviour
         else{
             GetComponent<NavMeshAgent>().enabled = true;
         }
+
+        if(finJeu == true)
+        {
+            SceneManager.LoadScene("Finale_Victoire");
+        }
     }
 
     public void ToucheBouleDeFeu(){
         // si l'ennemi touche la boule de feu on enleve 50 de sa vie
         vie = vie -75;
         // si la vie est de 0, alors l'ennemi meurt
+        
         if(vie <= 0){
+
+            if(gameObject.tag == "Boss"){
+                finJeu = true;
+            }
             GetComponent<Animator>().SetBool("mort", true);
             GetComponent<NavMeshAgent>().enabled = false; 
             gameObject.tag = "Untagged"; 
@@ -55,6 +67,7 @@ public class Ennemis : MonoBehaviour
             // Ajouter par Tamyla
             GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
         }
+        
     }
 
     public void AttaqueEpee(){
@@ -62,6 +75,11 @@ public class Ennemis : MonoBehaviour
         vie = vie -50;
         // si la vie est de 0, alors l'ennemi meurt
         if (vie <= 0){
+
+            if(gameObject.tag == "Boss"){
+                finJeu = true;
+            }
+
             GetComponent<Animator>().SetBool("mort", true);
             GetComponent<NavMeshAgent>().enabled = false; 
             gameObject.tag = "Untagged"; 
@@ -70,6 +88,7 @@ public class Ennemis : MonoBehaviour
             // Ajouter par Tamyla
             GetComponent<AudioSource>().Play(); // Joue son mort de l'ennemi
         }
+        
     }
 
     public void animationAttaque()
